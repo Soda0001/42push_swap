@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
 void	op_ra(t_node **head_a)
 {
 	t_node	*temp;
@@ -49,5 +51,5 @@ void	op_rra(t_node **head_a)
 
 void	op_rrb(t_node **head_b)
 {
-	op_rra(head_b)
+	op_rra(head_b);
 }

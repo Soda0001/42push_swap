@@ -18,7 +18,6 @@ void	op_sa(t_node **head)
 
 	if (!head || !*head || !(*head)->next)
 		return ;
-
 	temp = *head;
 	*head = (*head)->next;
 	temp->next = (*head)->next;
