@@ -15,6 +15,14 @@
 
 //# include "libft.h"
 
+typedef enum e_strategy
+{
+	STRAT_SIMPLE,
+	STRAT_MEDIUM,
+	STRAT_COMPLEX,
+	STRAT_ADAPTIVE
+}	t_strategy;
+
 typedef struct s_node
 {
 	int				value;
