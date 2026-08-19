@@ -10,22 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	op_ra()
+void	op_ra(t_node **head_a)
 {
-	
+	t_node	*temp;
+	t_node	*temp_head;
+
+	if (!head_a || !*head_a || !(*head_a)->next)
+		return ;
+	temp_head = (*head_a)->next;
+	temp = ft_lstlast(*head_a);
+	(*head_a)->next = NULL;
+	temp->next = *head_a;
+	*head_a = temp_head;
 }
 
-void	op_rb()
+void	op_rb(t_node **head_b)
 {
-	
+	op_ra(head_b);
 }
 
 void	op_rra(t_node **head_a)
 {
 	t_node	*temp;
 
+	if (!head_a || !*head_a || !(*head_a)->next)
+		return ;
 	temp = *head_a;
-	*head_a = ft_lstlast(head_a);
+	*head_a = ft_lstlast(*head_a);
 	(*head_a)->next = temp;
 	while (temp)
 	{
