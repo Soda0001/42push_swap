@@ -35,5 +35,7 @@ void	op_ra(t_node **head_a);
 void	op_rb(t_node **head_b);
 void	op_rra(t_node **head_a);
 void	op_rrb(t_node **head_b);
+void	op_rr(t_node **head_a, t_node **head_b);
+void	op_rrr(t_node **head_a, t_node **head_b);
 
 #endif
