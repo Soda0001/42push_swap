@@ -1,17 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   operations_push.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: odurmaz@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/19 13:24:11 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/19 13:35:02 by odurmaz          ###   ########.fr       */
+/*   Created: 2026/08/19 13:45:00 by odurmaz           #+#    #+#             */
+/*   Updated: 2026/08/19 13:46:04 by odurmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-typedef	struct s_node
+#include "push_swap.h"
+
+void op_pa()
 {
-	int	value;
-	struct	s_node	*next;
-}	t_node;
+	
+}
+
+void op_pb()
+{
+	
+}

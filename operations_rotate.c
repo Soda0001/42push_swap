@@ -1,17 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   operations_rotate.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: odurmaz@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/19 13:24:11 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/19 13:35:02 by odurmaz          ###   ########.fr       */
+/*   Created: 2026/08/19 13:46:46 by odurmaz           #+#    #+#             */
+/*   Updated: 2026/08/19 13:47:35 by odurmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-typedef	struct s_node
+void op_ra()
 {
-	int	value;
-	struct	s_node	*next;
-}	t_node;
+	
+}
+
+void op_rb()
+{
+	
+}
+
+void op_rra()
+{
+	
+}
+
+void op_rrb()
+{
+	
+}
