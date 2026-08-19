@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sedeniz <sedeniz@student.42istanbul.com.t  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/19 21:25:41 by sedeniz           #+#    #+#             */
+/*   Updated: 2026/08/19 21:25:48 by sedeniz          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int	main(int ac, char **av)
 {
-	t_strategy strategy;
+	t_strategy	strategy;
 
 	strategy = decide_algo(av[1]);
 	run_algo(strategy);
-	return(0);
+	return (0);
 }

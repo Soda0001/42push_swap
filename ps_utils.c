@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ps_utils.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sedeniz <sedeniz@student.42istanbul.com.t  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/19 21:26:26 by sedeniz           #+#    #+#             */
+/*   Updated: 2026/08/19 21:26:28 by sedeniz          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 t_strategy	decide_algo(char *first_arg)
 {
 	if (ft_strcmp(first_arg, "--simple") == 0)
@@ -9,14 +21,15 @@ t_strategy	decide_algo(char *first_arg)
 	else
 		return (STRAT_ADAPTIVE);
 }
+
 void	run_algo(t_strategy strategy)
 {
 	if (strategy == STRAT_SIMPLE)
-		// simple
+		/*simple*/
 	else if (strategy == STRAT_MEDIUM)
-		// medium
+		/*medium*/
 	else if (strategy == STRAT_COMPLEX)
-		// complex
+		/*complex*/
 	else if (strategy == STRAT_ADAPTIVE)
-		// adaptive
+		/*adakptive*/
 }
