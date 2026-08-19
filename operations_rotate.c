@@ -10,22 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void op_ra()
+void	op_ra()
 {
 	
 }
 
-void op_rb()
+void	op_rb()
 {
 	
 }
 
-void op_rra()
+void	op_rra(t_node **head_a)
 {
-	
+	t_node	*temp;
+
+	temp = *head_a;
+	*head_a = ft_lstlast(head_a);
+	(*head_a)->next = temp;
+	while (temp)
+	{
+		if (temp->next == *head_a)
+			break ;
+		temp = temp->next;
+	}
+	temp->next = NULL;
 }
 
-void op_rrb()
+void	op_rrb(t_node **head_b)
 {
-	
+	op_rra(head_b)
 }
