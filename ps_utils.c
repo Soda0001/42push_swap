@@ -30,6 +30,6 @@ void	run_algo(t_strategy strategy)
 		/*medium*/
 	else if (strategy == STRAT_COMPLEX)
 		/*complex*/
-	else if (strategy == STRAT_ADAPTIVE)
-		/*adakptive*/
+	else (strategy == STRAT_ADAPTIVE)
+		/*adaptive*/
 }
