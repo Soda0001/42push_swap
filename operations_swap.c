@@ -12,9 +12,20 @@
 
 #include "push_swap.h"
 
-void op_sa()
+void	op_sa(t_node **head)
 {
-	
+	t_node	*temp;
+
+	if (!head || !*head || !(*head)->next)
+	{
+		write(1, "-op_sa-", 7);
+		return ;
+	}
+
+	temp = head;
+	*head = (*head)->next;
+	temp->next = (*head)->next;
+	(*head)->next = temp;
 }
 
 void op_sb()
