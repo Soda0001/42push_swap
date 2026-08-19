@@ -17,18 +17,15 @@ void	op_sa(t_node **head)
 	t_node	*temp;
 
 	if (!head || !*head || !(*head)->next)
-	{
-		write(1, "-op_sa-", 7);
 		return ;
-	}
 
-	temp = head;
+	temp = *head;
 	*head = (*head)->next;
 	temp->next = (*head)->next;
 	(*head)->next = temp;
 }
 
-void op_sb()
+void op_sb(t_node **head)
 {
-	
+	op_sa(head);
 }
