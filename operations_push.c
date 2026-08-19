@@ -12,12 +12,19 @@
 
 #include "push_swap.h"
 
-void op_pa()
+void    op_pa(t_node **head_a, t_node **head_b)
 {
-	
+	t_node	*temp;
+
+	if (!head_b || !(*head_b))
+		return ;
+	temp = (*head_b)->next;
+	(*head_b)->next = *head_a;
+	*head_a = *head_b;
+	*head_b = temp;
 }
 
-void op_pb()
+void	op_pb()
 {
-	
+
 }
