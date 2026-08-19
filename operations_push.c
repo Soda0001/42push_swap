@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+
 void    op_pa(t_node **head_a, t_node **head_b)
 {
 	t_node	*temp;
@@ -24,7 +25,15 @@ void    op_pa(t_node **head_a, t_node **head_b)
 	*head_b = temp;
 }
 
-void	op_pb()
+void	op_pb(t_node **head_a, t_node **head_b)
 {
+	t_node	*temp;
 
+	if (!head_a || !(*head_a))
+		return ;
+
+	temp = (*head_a)->next;
+	(*head_a)->next = *head_b;
+	*head_b = *head_a;
+	*head_a = temp;
 }
