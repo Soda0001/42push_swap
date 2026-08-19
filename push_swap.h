@@ -10,6 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+
+//# include "libft.h"
+
 typedef struct s_node
 {
 	int				value;
@@ -30,3 +35,5 @@ void	op_ra(t_node **head_a);
 void	op_rb(t_node **head_b);
 void	op_rra(t_node **head_a);
 void	op_rrb(t_node **head_b);
+
+#endif
