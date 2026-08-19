@@ -25,7 +25,13 @@ void	op_sa(t_node **head)
 	(*head)->next = temp;
 }
 
-void op_sb(t_node **head)
+void	op_sb(t_node **head)
 {
 	op_sa(head);
+}
+
+void	op_ss(t_node **head_a, t_node **head_b)
+{
+	op_sa(head_a);
+	op_sb(head_b);
 }
