@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-t_strategy	decide_algo(char *first_arg)
+t_strategy	check_forced(char *first_arg)
 {
 	if (ft_strcmp(first_arg, "--simple") == 0)
 		return (STRAT_SIMPLE);
@@ -20,7 +20,7 @@ t_strategy	decide_algo(char *first_arg)
 		return (STRAT_MEDIUM);
 	else if (ft_strcmp(first_arg, "--complex") == 0)
 		return (STRAT_COMPLEX);
-	else // ya-- adaptive olacak ya da boş olacak
+	else
 		return (STRAT_ADAPTIVE);
 }
 

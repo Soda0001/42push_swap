@@ -16,9 +16,7 @@ int	main(int ac, char **av)
 {
 	t_strategy	strategy;
 
-	if (ac > 1)
-		initialize_stack();
-	strategy = decide_algo(av[1]);
+	strategy = check_forced(av[1]);
 	run_algo(strategy);
 	return (0);
 }
