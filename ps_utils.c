@@ -11,21 +11,19 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/* I dont even remember why i did this:
 
 int	determine_start(char *first_arg)
 {
-	int	start_index;
+	int	starting_index;
 
-	start_index = 1
-	if (ft_strcmp(first_arg[0], '-'))
+	starting_index = 1;
+	if (ft_strncmp(first_arg, "--", 2) == 0)
 	{
 		start_index = 2;
-		return (start_index);
+		return (starting_index);
 	}
-	return (start_index);
+	return (starting_index);
 }
-*/
 
 t_strategy	check_forced(char *first_arg)
 {
