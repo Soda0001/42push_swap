@@ -13,9 +13,6 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-//# include "libft.h"
-#include "stddef.h"
-
 typedef enum e_strategy
 {
 	STRAT_SIMPLE,
