@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ps_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sedeniz <sedeniz@student.42istanbul.com.t  +#+  +:+       +#+        */
+/*   By: odurmaz@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 21:26:26 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/19 21:26:28 by sedeniz          ###   ########.fr       */
+/*   Updated: 2026/08/21 06:40:04 by odurmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 t_strategy	decide_algo(char *first_arg)
 {
@@ -18,7 +20,7 @@ t_strategy	decide_algo(char *first_arg)
 		return (STRAT_MEDIUM);
 	else if (ft_strcmp(first_arg, "--complex") == 0)
 		return (STRAT_COMPLEX);
-	else
+	else // ya-- adaptive olacak ya da boş olacak
 		return (STRAT_ADAPTIVE);
 }
 
