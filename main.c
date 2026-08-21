@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sedeniz <sedeniz@student.42istanbul.com.t  +#+  +:+       +#+        */
+/*   By: odurmaz@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 21:25:41 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/19 21:25:48 by sedeniz          ###   ########.fr       */
+/*   Updated: 2026/08/21 06:29:56 by odurmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 int	main(int ac, char **av)
 {
