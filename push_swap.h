@@ -6,7 +6,7 @@
 /*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 13:24:11 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/21 17:22:28 by sedeniz          ###   ########.fr       */
+/*   Updated: 2026/08/21 18:02:35 by sedeniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ typedef enum e_strategy
 	STRAT_SIMPLE,
 	STRAT_MEDIUM,
 	STRAT_COMPLEX,
-	STRAT_ADAPTIVE
+	STRAT_ADAPTIVE,
+	STRAT_INVALID
 }	t_strategy;
 
 /*
