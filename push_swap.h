@@ -6,7 +6,7 @@
 /*   By: odurmaz@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 13:24:11 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/19 13:35:02 by odurmaz          ###   ########.fr       */
+/*   Updated: 2026/08/21 06:30:41 by odurmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 //# include "libft.h"
+#include "stddef.h"
 
 typedef enum e_strategy
 {
