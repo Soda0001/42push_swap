@@ -6,7 +6,7 @@
 /*   By: odurmaz@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 21:25:41 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/21 06:29:56 by odurmaz          ###   ########.fr       */
+/*   Updated: 2026/08/21 13:04:22 by sedeniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	main(int ac, char **av)
 	t_strategy	strategy;
 
 	strategy = check_forced(av[1]);
+	determine_start();
 	run_algo(strategy);
 	return (0);
 }

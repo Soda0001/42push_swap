@@ -6,11 +6,26 @@
 /*   By: odurmaz@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 21:26:26 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/21 06:40:04 by odurmaz          ###   ########.fr       */
+/*   Updated: 2026/08/21 13:04:48 by sedeniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+/* I dont even remember why i did this:
+
+int	determine_start(char *first_arg)
+{
+	int	start_index;
+
+	start_index = 1
+	if (ft_strcmp(first_arg[0], '-'))
+	{
+		start_index = 2;
+		return (start_index);
+	}
+	return (start_index);
+}
+*/
 
 t_strategy	check_forced(char *first_arg)
 {
