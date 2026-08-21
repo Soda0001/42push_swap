@@ -6,7 +6,7 @@
 /*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 13:24:11 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/21 17:17:24 by sedeniz          ###   ########.fr       */
+/*   Updated: 2026/08/21 17:22:28 by sedeniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,8 @@ void	op_rra(t_node **head_a);
 void	op_rrb(t_node **head_b);
 void	op_rr(t_node **head_a, t_node **head_b);
 void	op_rrr(t_node **head_a, t_node **head_b);
+
+/* Utility functions */
+int	determine_start(char *first_arg);
 
 #endif
