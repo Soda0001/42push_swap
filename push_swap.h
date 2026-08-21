@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: odurmaz@student.42istanbul.com.tr          +#+  +:+       +#+        */
+/*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 13:24:11 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/21 06:30:41 by odurmaz          ###   ########.fr       */
+/*   Updated: 2026/08/21 17:17:24 by sedeniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,13 @@ typedef enum e_strategy
 	STRAT_ADAPTIVE
 }	t_strategy;
 
+/*
 typedef struct s_node
 {
 	int				value;
 	struct s_node	*next;
 }	t_node;
+*/
 
 /* Swap operations*/
 void	op_sa(t_node **head);
