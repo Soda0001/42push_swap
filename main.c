@@ -15,10 +15,11 @@
 int	main(int ac, char **av)
 {
 	t_strategy	strategy;
+	t_list		*stack;
 
 	strategy = check_forced(av[1]);
 	//determine_start(av[1]);
-	initialize_stack(av[1], ac);
+	stack = initialize_stack(av[1], ac);
 	run_algo(strategy);
 	return (0);
 }
