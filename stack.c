@@ -12,10 +12,17 @@
 
 #include "libft.h"
 
-void	initialize_stack()
+t_list	*initialize_stack(char **av, int ac)
 {
-	t_list	stack;
+	t_list	*stack;
+	int		starting_index;
 
 	stack = NULL;
-	while()
+	starting_index = determine_start(av[1]);
+	while (starting_index < ac)
+	{
+		ft_lstadd_back(&stack, ft_lstnew(ft_atoi(av[starting_index])));
+		starting_index++;
+	}
+	return (stack);
 }
