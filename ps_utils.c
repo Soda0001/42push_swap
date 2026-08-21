@@ -27,14 +27,17 @@ int	determine_start(char *first_arg)
 
 t_strategy	check_forced(char *first_arg)
 {
+	if (ft_strncmp(first_arg, "--", 2) != 0)
+		return (STRAT_ADAPTIVE);
 	if (ft_strcmp(first_arg, "--simple") == 0)
 		return (STRAT_SIMPLE);
-	else if (ft_strcmp(first_arg, "--medium") == 0)
+	if (ft_strcmp(first_arg, "--medium") == 0)
 		return (STRAT_MEDIUM);
-	else if (ft_strcmp(first_arg, "--complex") == 0)
+	if (ft_strcmp(first_arg, "--complex") == 0)
 		return (STRAT_COMPLEX);
-	else
+	if (ft_strcmp(first_arg, "--adaptive") == 0)
 		return (STRAT_ADAPTIVE);
+	return (STRAT_INVALID);
 }
 
 void	run_algo(t_strategy strategy)
