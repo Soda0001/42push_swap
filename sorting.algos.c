@@ -17,7 +17,7 @@ void	simple_sort()
 	printf("simple");
 }
 
-void	medium_sort_sort()
+void	medium_sort()
 {
 	printf("medium");
 }
