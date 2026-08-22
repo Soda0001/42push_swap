@@ -19,7 +19,7 @@ int	determine_start(char *first_arg)
 	starting_index = 1;
 	if (ft_strncmp(first_arg, "--", 2) == 0)
 	{
-		start_index = 2;
+		starting_index = 2;
 		return (starting_index);
 	}
 	return (starting_index);
