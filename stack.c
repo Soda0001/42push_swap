@@ -21,7 +21,7 @@ t_node	*initialize_stack(char **av, int ac)
 	starting_index = determine_start(av[1]);
 	while (starting_index < ac)
 	{
-		ft_lstadd_back(&stack, ft_lstnew(ft_atoi(av[starting_index])));
+		insert_at_tail(&stack, new_node(ft_atoi(av[starting_index])));
 		starting_index++;
 	}
 	return (stack);
