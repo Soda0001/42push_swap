@@ -43,11 +43,11 @@ t_strategy	check_forced(char *forced_command)
 void	run_algo(t_strategy strategy)
 {
 	if (strategy == STRAT_SIMPLE)
-		/*simple*/
-	else if (strategy == STRAT_MEDIUM)
-		/*medium*/
-	else if (strategy == STRAT_COMPLEX)
-		/*complex*/
-	else (strategy == STRAT_ADAPTIVE)
-		/*adaptive*/
+		printf("---simple---\n");
+	if (strategy == STRAT_MEDIUM)
+		printf("---medium---\n");
+	if (strategy == STRAT_COMPLEX)
+		printf("---complex---\n");
+	else //(strategy == STRAT_ADAPTIVE)
+		printf("---adaptive---\n");
 }

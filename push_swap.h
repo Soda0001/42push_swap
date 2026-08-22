@@ -6,7 +6,7 @@
 /*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 13:24:11 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/22 15:07:25 by sedeniz          ###   ########.fr       */
+/*   Updated: 2026/08/22 15:31:04 by sedeniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
+# include <stdio.h>
 
 typedef enum e_strategy
 {
@@ -51,5 +52,10 @@ void	op_rrr(t_list **head_a, t_list **head_b);
 
 /* Utility functions */
 int	determine_start(char *first_arg);
+t_strategy	check_forced(char *forced_command);
+void	run_algo(t_strategy strategy);
+
+/* Stack functions */
+t_list	*initialize_stack(char **av, int ac);
 
 #endif

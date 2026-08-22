@@ -6,7 +6,7 @@
 /*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 17:55:35 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/22 15:18:23 by sedeniz          ###   ########.fr       */
+/*   Updated: 2026/08/22 15:34:33 by sedeniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 
+/* Linked-list functions*/
 t_list			*ft_lstnew(int content);
 void			ft_lstadd_front(t_list **lst, t_list *new);
 unsigned int	ft_lstsize(t_list *lst);
