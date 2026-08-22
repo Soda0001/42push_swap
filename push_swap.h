@@ -6,7 +6,7 @@
 /*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 13:24:11 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/22 15:31:04 by sedeniz          ###   ########.fr       */
+/*   Updated: 2026/08/22 17:36:04 by sedeniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ typedef enum e_strategy
 	STRAT_INVALID
 }	t_strategy;
 
-/*
+
 typedef struct s_node
 {
 	int				value;
 	struct s_node	*next;
 }	t_list;
-*/
+
 
 /* Swap operations*/
 void	op_sa(t_list **head);
