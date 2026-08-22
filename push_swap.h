@@ -6,12 +6,14 @@
 /*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 13:24:11 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/22 14:55:03 by sedeniz          ###   ########.fr       */
+/*   Updated: 2026/08/22 15:07:25 by sedeniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+# include "libft/libft.h"
 
 typedef enum e_strategy
 {

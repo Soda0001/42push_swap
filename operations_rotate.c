@@ -6,11 +6,11 @@
 /*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 13:46:46 by odurmaz           #+#    #+#             */
-/*   Updated: 2026/08/22 14:56:10 by sedeniz          ###   ########.fr       */
+/*   Updated: 2026/08/22 15:06:52 by sedeniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
 void	op_ra(t_list **head_a)
 {
