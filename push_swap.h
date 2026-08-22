@@ -6,7 +6,7 @@
 /*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 13:24:11 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/22 18:01:34 by sedeniz          ###   ########.fr       */
+/*   Updated: 2026/08/22 18:28:32 by sedeniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,6 @@ void	insert_at_tail(t_node **lst, t_node *new);
 void	insert_at_head(t_node **lst, t_node *new);
 t_node	*new_node(int content);
 t_node	*find_last_node(t_node *lst);
+void	free_stack(t_node **stack);
 
 #endif

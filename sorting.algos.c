@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   sorting.algos.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: odurmaz@student.42istanbul.com.tr          +#+  +:+       +#+        */
+/*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/19 21:25:41 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/21 13:04:22 by sedeniz          ###   ########.fr       */
+/*   Created: 2026/08/22 18:22:52 by sedeniz           #+#    #+#             */
+/*   Updated: 2026/08/22 18:22:52 by sedeniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+void	simple_sort()
 {
-	t_strategy	strategy;
-	t_node		*stack;
+	printf("simple");
+}
 
-	if (ac < 2)
-		return (0);
-	strategy = check_forced(av[1]);
-	stack = initialize_stack(av, ac);
-	run_algo(strategy, &stack);
-	free_stack(&stack);
-	return (0);
+void	medium_sort_sort()
+{
+	printf("medium");
+}
+
+void	complex_sort()
+{
+	printf("complex");
+}
+
+void	adaptive_sort()
+{
+	printf("adaptive");
 }

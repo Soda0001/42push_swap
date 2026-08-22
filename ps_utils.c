@@ -40,15 +40,15 @@ t_strategy	check_forced(char *forced_command)
 	return (STRAT_INVALID);
 }
 
-void	run_algo(t_strategy strategy)
+void	run_algo(t_strategy strategy, t_node **stack)
 {
 	if (strategy == STRAT_SIMPLE)
-		printf("---simple---\n");
-	if (strategy == STRAT_MEDIUM)
-		printf("---medium---\n");
-	if (strategy == STRAT_COMPLEX)
-		printf("---complex---\n");
-	else //(strategy == STRAT_ADAPTIVE)
-		printf("---adaptive---\n");
+		simple_sort(stack);
+	else if (strategy == STRAT_MEDIUM)
+		medium_sort(stack);
+	else if (strategy == STRAT_COMPLEX)
+		complex_sort(stack);
+	else if (strategy == STRAT_ADAPTIVE)
+		adaptive_sort(stack);
 }
 

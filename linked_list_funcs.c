@@ -16,6 +16,8 @@ void	insert_at_tail(t_node **lst, t_node *new)
 {
 	t_node	*last;
 
+	if (!new)
+		return ;
 	last = *lst;
 	if (last == NULL)
 	{
@@ -42,16 +44,16 @@ void	insert_at_head(t_node **lst, t_node *new)
 	*lst = new;
 }
 
-t_node	*new_node(int content)
+t_node	*new_node(int value)
 {
-	t_node	*result;
+	t_node	*node;
 
-	result = malloc(sizeof(t_node));
-	if (!result)
+	node = malloc(sizeof(t_node));
+	if (!node)
 		return (NULL);
-	result->content = content;
-	result->next = NULL;
-	return (result);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }
 
 t_node	*find_last_node(t_node *lst)
@@ -63,4 +65,16 @@ t_node	*find_last_node(t_node *lst)
 		lst = lst->next;
 	}
 	return (lst);
+}
+
+void	free_stack(t_node **stack)
+{
+	t_node	*temp;
+
+	while (*stack)
+	{
+		temp = (*stack)->next;
+		free(*stack);
+		*stack = temp;
+	}
 }
