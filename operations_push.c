@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   operations_push.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: odurmaz@student.42istanbul.com.tr          +#+  +:+       +#+        */
+/*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 13:45:00 by odurmaz           #+#    #+#             */
-/*   Updated: 2026/08/19 13:46:04 by odurmaz          ###   ########.fr       */
+/*   Updated: 2026/08/22 14:56:05 by sedeniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	op_pa(t_node **head_a, t_node **head_b)
+void	op_pa(t_list **head_a, t_list **head_b)
 {
-	t_node	*temp;
+	t_list	*temp;
 
 	if (!head_b || !(*head_b))
 		return ;
@@ -24,9 +24,9 @@ void	op_pa(t_node **head_a, t_node **head_b)
 	*head_b = temp;
 }
 
-void	op_pb(t_node **head_a, t_node **head_b)
+void	op_pb(t_list **head_a, t_list **head_b)
 {
-	t_node	*temp;
+	t_list	*temp;
 
 	if (!head_a || !(*head_a))
 		return ;

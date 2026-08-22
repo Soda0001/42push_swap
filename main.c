@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
 int	main(int ac, char **av)
 {
@@ -18,7 +18,6 @@ int	main(int ac, char **av)
 	t_list		*stack;
 
 	strategy = check_forced(av[1]);
-	//determine_start(av[1]);
 	stack = initialize_stack(av[1], ac);
 	run_algo(strategy);
 	return (0);

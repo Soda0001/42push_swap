@@ -10,13 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	op_rr(t_node **head_a, t_node **head_b)
+#include "libft.h"
+
+void	op_rr(t_list **head_a, t_list **head_b)
 {
 	op_ra(head_a);
 	op_rb(head_b);
 }
 
-void	op_rrr(t_node **head_a, t_node **head_b)
+void	op_rrr(t_list **head_a, t_list **head_b)
 {
 	op_rra(head_a);
 	op_rrb(head_b);

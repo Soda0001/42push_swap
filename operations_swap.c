@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   operations_swap.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: odurmaz@student.42istanbul.com.tr          +#+  +:+       +#+        */
+/*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 13:45:00 by odurmaz           #+#    #+#             */
-/*   Updated: 2026/08/19 13:45:34 by odurmaz          ###   ########.fr       */
+/*   Updated: 2026/08/22 14:56:30 by sedeniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	op_sa(t_node **head)
+void	op_sa(t_list **head)
 {
-	t_node	*temp;
+	t_list	*temp;
 
 	if (!head || !*head || !(*head)->next)
 		return ;
@@ -24,12 +24,12 @@ void	op_sa(t_node **head)
 	(*head)->next = temp;
 }
 
-void	op_sb(t_node **head)
+void	op_sb(t_list **head)
 {
 	op_sa(head);
 }
 
-void	op_ss(t_node **head_a, t_node **head_b)
+void	op_ss(t_list **head_a, t_list **head_b)
 {
 	op_sa(head_a);
 	op_sb(head_b);

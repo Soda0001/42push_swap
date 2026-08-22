@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   operations_rotate.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: odurmaz@student.42istanbul.com.tr          +#+  +:+       +#+        */
+/*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 13:46:46 by odurmaz           #+#    #+#             */
-/*   Updated: 2026/08/19 13:47:35 by odurmaz          ###   ########.fr       */
+/*   Updated: 2026/08/22 14:56:10 by sedeniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	op_ra(t_node **head_a)
+void	op_ra(t_list **head_a)
 {
-	t_node	*temp;
-	t_node	*temp_head;
+	t_list	*temp;
+	t_list	*temp_head;
 
 	if (!head_a || !*head_a || !(*head_a)->next)
 		return ;
@@ -26,14 +26,14 @@ void	op_ra(t_node **head_a)
 	*head_a = temp_head;
 }
 
-void	op_rb(t_node **head_b)
+void	op_rb(t_list **head_b)
 {
 	op_ra(head_b);
 }
 
-void	op_rra(t_node **head_a)
+void	op_rra(t_list **head_a)
 {
-	t_node	*temp;
+	t_list	*temp;
 
 	if (!head_a || !*head_a || !(*head_a)->next)
 		return ;
@@ -49,7 +49,7 @@ void	op_rra(t_node **head_a)
 	temp->next = NULL;
 }
 
-void	op_rrb(t_node **head_b)
+void	op_rrb(t_list **head_b)
 {
 	op_rra(head_b);
 }
