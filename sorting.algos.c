@@ -12,22 +12,26 @@
 
 #include "push_swap.h"
 
-void	simple_sort()
+void	simple_sort(t_node **stack)
 {
-	printf("simple");
+	(void)stack;
+	printf("simple\n");
 }
 
-void	medium_sort()
+void	medium_sort(t_node **stack)
 {
-	printf("medium");
+	(void)stack;
+	printf("medium\n");
 }
 
-void	complex_sort()
+void	complex_sort(t_node **stack)
 {
-	printf("complex");
+	(void)stack;
+	printf("complex\n");
 }
 
-void	adaptive_sort()
+void	adaptive_sort(t_node **stack)
 {
-	printf("adaptive");
+	(void)stack;
+	printf("adaptive\n");
 }

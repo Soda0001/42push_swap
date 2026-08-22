@@ -6,7 +6,7 @@
 /*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 13:24:11 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/22 18:32:01 by sedeniz          ###   ########.fr       */
+/*   Updated: 2026/08/22 18:40:09 by sedeniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	op_rrr(t_node **head_a, t_node **head_b);
 /* Utility functions */
 int	determine_start(char *first_arg);
 t_strategy	check_forced(char *forced_command);
-void	run_algo(t_strategy strategy);
+void	run_algo(t_strategy strategy, t_node **stack);
 
 /* Stack functions */
 t_node	*initialize_stack(char **av, int ac);
@@ -66,9 +66,9 @@ t_node	*find_last_node(t_node *lst);
 void	free_stack(t_node **stack);
 
 /* Sorting functions */
-void	simple_sort();
-void	medium_sort();
-void	complex_sort();
-void	adaptive_sort();
+void	simple_sort(t_node **stack);
+void	medium_sort(t_node **stack);
+void	complex_sort(t_node **stack);
+void	adaptive_sort(t_node **stack);
 
 #endif

@@ -44,7 +44,7 @@ void	insert_at_head(t_node **lst, t_node *new)
 	*lst = new;
 }
 
-t_node	*new_node(int value)
+t_node	*new_node(int content)
 {
 	t_node	*node;
 
