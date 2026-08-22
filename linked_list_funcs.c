@@ -42,7 +42,7 @@ void	insert_at_head(t_node **lst, t_node *new)
 	*lst = new;
 }
 
-t_node	*new_node(void *content)
+t_node	*new_node(int content)
 {
 	t_node	*result;
 
@@ -52,4 +52,15 @@ t_node	*new_node(void *content)
 	result->content = content;
 	result->next = NULL;
 	return (result);
+}
+
+t_node	*find_last_node(t_node *lst)
+{
+	while (lst)
+	{
+		if (lst->next == NULL)
+			break ;
+		lst = lst->next;
+	}
+	return (lst);
 }

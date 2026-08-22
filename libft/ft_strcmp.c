@@ -5,12 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/22 18:03:46 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/22 18:03:46 by sedeniz          ###   ########.fr       */
+/*   Created: 2026/08/22 18:08:59 by sedeniz           #+#    #+#             */
+/*   Updated: 2026/08/22 18:08:59 by sedeniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int ft_strcmp(char *s1, char *s2)
 {

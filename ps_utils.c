@@ -51,3 +51,4 @@ void	run_algo(t_strategy strategy)
 	else //(strategy == STRAT_ADAPTIVE)
 		printf("---adaptive---\n");
 }
+
