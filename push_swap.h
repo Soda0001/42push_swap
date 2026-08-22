@@ -6,7 +6,7 @@
 /*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 13:24:11 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/22 17:36:04 by sedeniz          ###   ########.fr       */
+/*   Updated: 2026/08/22 17:40:32 by sedeniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,25 +30,25 @@ typedef struct s_node
 {
 	int				value;
 	struct s_node	*next;
-}	t_list;
+}	t_node;
 
 
 /* Swap operations*/
-void	op_sa(t_list **head);
-void	op_sb(t_list **head);
-void	op_ss(t_list **head_a, t_list **head_b);
+void	op_sa(t_node **head);
+void	op_sb(t_node **head);
+void	op_ss(t_node **head_a, t_node **head_b);
 
 /* Push operations */
-void	op_pa(t_list **head_a, t_list **head_b);
-void	op_pb(t_list **head_a, t_list **head_b);
+void	op_pa(t_node **head_a, t_node **head_b);
+void	op_pb(t_node **head_a, t_node **head_b);
 
 /* Rotate operations */
-void	op_ra(t_list **head_a);
-void	op_rb(t_list **head_b);
-void	op_rra(t_list **head_a);
-void	op_rrb(t_list **head_b);
-void	op_rr(t_list **head_a, t_list **head_b);
-void	op_rrr(t_list **head_a, t_list **head_b);
+void	op_ra(t_node **head_a);
+void	op_rb(t_node **head_b);
+void	op_rra(t_node **head_a);
+void	op_rrb(t_node **head_b);
+void	op_rr(t_node **head_a, t_node **head_b);
+void	op_rrr(t_node **head_a, t_node **head_b);
 
 /* Utility functions */
 int	determine_start(char *first_arg);
@@ -56,6 +56,6 @@ t_strategy	check_forced(char *forced_command);
 void	run_algo(t_strategy strategy);
 
 /* Stack functions */
-t_list	*initialize_stack(char **av, int ac);
+t_node	*initialize_stack(char **av, int ac);
 
 #endif

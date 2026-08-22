@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-t_list	*initialize_stack(char **av, int ac)
+t_node	*initialize_stack(char **av, int ac)
 {
-	t_list	*stack;
+	t_node	*stack;
 	int		starting_index;
 
 	stack = NULL;

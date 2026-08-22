@@ -6,15 +6,15 @@
 /*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 13:45:00 by odurmaz           #+#    #+#             */
-/*   Updated: 2026/08/22 15:06:49 by sedeniz          ###   ########.fr       */
+/*   Updated: 2026/08/22 17:44:13 by sedeniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	op_pa(t_list **head_a, t_list **head_b)
+void	op_pa(t_node **head_a, t_node **head_b)
 {
-	t_list	*temp;
+	t_node	*temp;
 
 	if (!head_b || !(*head_b))
 		return ;
@@ -24,9 +24,9 @@ void	op_pa(t_list **head_a, t_list **head_b)
 	*head_b = temp;
 }
 
-void	op_pb(t_list **head_a, t_list **head_b)
+void	op_pb(t_node **head_a, t_node **head_b)
 {
-	t_list	*temp;
+	t_node	*temp;
 
 	if (!head_a || !(*head_a))
 		return ;

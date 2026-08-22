@@ -15,7 +15,7 @@
 int	main(int ac, char **av)
 {
 	t_strategy	strategy;
-	t_list		*stack;
+	t_node		*stack;
 
 	strategy = check_forced(av[1]);
 	stack = initialize_stack(&av[1], ac);

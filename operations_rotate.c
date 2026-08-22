@@ -6,16 +6,16 @@
 /*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 13:46:46 by odurmaz           #+#    #+#             */
-/*   Updated: 2026/08/22 15:06:52 by sedeniz          ###   ########.fr       */
+/*   Updated: 2026/08/22 17:44:16 by sedeniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	op_ra(t_list **head_a)
+void	op_ra(t_node **head_a)
 {
-	t_list	*temp;
-	t_list	*temp_head;
+	t_node	*temp;
+	t_node	*temp_head;
 
 	if (!head_a || !*head_a || !(*head_a)->next)
 		return ;
@@ -26,14 +26,14 @@ void	op_ra(t_list **head_a)
 	*head_a = temp_head;
 }
 
-void	op_rb(t_list **head_b)
+void	op_rb(t_node **head_b)
 {
 	op_ra(head_b);
 }
 
-void	op_rra(t_list **head_a)
+void	op_rra(t_node **head_a)
 {
-	t_list	*temp;
+	t_node	*temp;
 
 	if (!head_a || !*head_a || !(*head_a)->next)
 		return ;
@@ -49,7 +49,7 @@ void	op_rra(t_list **head_a)
 	temp->next = NULL;
 }
 
-void	op_rrb(t_list **head_b)
+void	op_rrb(t_node **head_b)
 {
 	op_rra(head_b);
 }
