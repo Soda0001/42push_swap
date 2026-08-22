@@ -6,7 +6,7 @@
 /*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 13:24:11 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/22 17:55:27 by sedeniz          ###   ########.fr       */
+/*   Updated: 2026/08/22 17:57:20 by sedeniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef enum e_strategy
 
 typedef struct s_node
 {
-	int				value;
+	int				content;
 	struct s_node	*next;
 }	t_node;
 
