@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
+/*   By: sedeniz <sedeniz@student.42istanbul.com.t  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 16:36:15 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/21 17:35:18 by sedeniz          ###   ########.fr       */
+/*   Updated: 2026/08/08 17:30:20 by sedeniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(int content)
+t_list	*ft_lstnew(void *content)
 {
 	t_list	*result;
 

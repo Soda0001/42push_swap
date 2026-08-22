@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
+/*   By: sedeniz <sedeniz@student.42istanbul.com.t  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 17:55:35 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/22 15:34:33 by sedeniz          ###   ########.fr       */
+/*   Updated: 2026/08/10 16:28:17 by sedeniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 # define LIBFT_H
 
 # include <unistd.h>
+# include <stddef.h>
 # include <stdlib.h>
 
 typedef struct s_list
 {
-	int				content;
+	void			*content;
 	struct s_list	*next;
 }	t_list;
 
@@ -43,7 +44,6 @@ size_t			ft_strlcat(char *dst, const char *src, size_t dstsize);
 char			*ft_strchr(const char *str, int ch);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strnstr(const char *str, const char *to_find, size_t n);
-int				ft_strcmp(char *s1, char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
@@ -62,8 +62,7 @@ void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 
-/* Linked-list functions*/
-t_list			*ft_lstnew(int content);
+t_list			*ft_lstnew(void *content);
 void			ft_lstadd_front(t_list **lst, t_list *new);
 unsigned int	ft_lstsize(t_list *lst);
 t_list			*ft_lstlast(t_list *lst);
