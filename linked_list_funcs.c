@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	add_at_tail(t_node **lst, t_node *new)
+void	insert_at_tail(t_node **lst, t_node *new)
 {
 	t_node	*last;
 
@@ -26,4 +26,30 @@ void	add_at_tail(t_node **lst, t_node *new)
 	while (last && last->next != NULL)
 		last = last->next;
 	last->next = new;
+}
+
+void	insert_at_head(t_node **lst, t_node *new)
+{
+	if (!lst || !new)
+		return ;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		new->next = NULL;
+		return ;
+	}
+	new->next = *lst;
+	*lst = new;
+}
+
+t_node	*new_node(void *content)
+{
+	t_node	*result;
+
+	result = malloc(sizeof(t_node));
+	if (!result)
+		return (NULL);
+	result->content = content;
+	result->next = NULL;
+	return (result);
 }
