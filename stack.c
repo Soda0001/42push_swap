@@ -12,13 +12,13 @@
 
 #include "push_swap.h"
 
-t_node	*initialize_stack(char **av, int ac)
+t_node	*initialize_stack(char **av, int ac, int start)
 {
 	t_node	*stack;
 	int		starting_index;
 
 	stack = NULL;
-	starting_index = determine_start(av[1]);
+	starting_index = start;
 	while (starting_index < ac)
 	{
 		insert_at_tail(&stack, new_node(ft_atoi(av[starting_index])));

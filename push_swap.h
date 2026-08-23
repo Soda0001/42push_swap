@@ -6,7 +6,7 @@
 /*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 13:24:11 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/23 13:19:44 by sedeniz          ###   ########.fr       */
+/*   Updated: 2026/08/23 17:49:02 by sedeniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void		run_algo(t_strategy strategy, t_node **stack);
 int			parse_options(char **av, int ac, t_strategy *strategy, int *bench);
 
 /* Stack functions */
-t_node	*initialize_stack(char **av, int ac);
+t_node	*initialize_stack(char **av, int ac, int start);
 
 /* Linked list functions */
 void	insert_at_tail(t_node **lst, t_node *new);
