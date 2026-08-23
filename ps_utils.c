@@ -64,6 +64,6 @@ void	run_algo(t_strategy strategy, t_node **stack)
 		medium_sort(stack);
 	else if (strategy == STRAT_COMPLEX)
 		complex_sort(stack);
-	else if (strategy == STRAT_ADAPTIVE)
+	else
 		adaptive_sort(stack);
 }
