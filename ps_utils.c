@@ -12,11 +12,6 @@
 
 #include "push_swap.h"
 
-int	check_bench()
-{
-	
-}
-
 t_strategy	check_forced(char *forced_command)
 {
 	if (ft_strncmp(forced_command, "--", 2) != 0)
@@ -39,12 +34,15 @@ int	parse_options(char **av, int ac, t_strategy *strategy, int *bench)
 	i = 1;
 	*strategy = STRAT_ADAPTIVE;
 	*bench = 0;
+	if (i < ac && !ft_strcmp(av[i], "--bench"))
+	{
+		*bench = 1;
+		i++;
+	}
 	if (i < ac && !ft_strncmp(av[i], "--", 2))
 	{
-		strategy = check_forced(av[i]);
-		if (!ft_strcmp(av[i], "--bench"))
-			*bench = 1;
-		else
+		*strategy = check_forced(av[i]);
+		if (*strategy == STRAT_INVALID)
 			return (-1);
 		i++;
 	}
@@ -57,20 +55,6 @@ int	parse_options(char **av, int ac, t_strategy *strategy, int *bench)
 	}
 	return (i);
 }
-
-int	determine_start(char *first_arg)
-{
-	int	starting_index;
-
-	starting_index = 1;
-	if (ft_strncmp(first_arg, "--", 2) == 0)
-	{
-		starting_index = 2;
-		return (starting_index);
-	}
-	return (starting_index);
-}
-
 
 void	run_algo(t_strategy strategy, t_node **stack)
 {
