@@ -14,24 +14,28 @@
 
 void	simple_sort(t_node **stack_a, t_node **stack_b)
 {
-	(void)stack;
+	(void)stack_a;
+	(void)stack_b;
 	printf("simple\n");
 }
 
 void	medium_sort(t_node **stack_a, t_node **stack_b)
 {
-	(void)stack;
+	(void)stack_a;
+	(void)stack_b;
 	printf("medium\n");
 }
 
 void	complex_sort(t_node **stack_a, t_node **stack_b)
 {
-	(void)stack;
+	(void)stack_a;
+	(void)stack_b;
 	printf("complex\n");
 }
 
 void	adaptive_sort(t_node **stack_a, t_node **stack_b)
 {
-	(void)stack;
+	(void)stack_a;
+	(void)stack_b;
 	printf("adaptive\n");
 }
