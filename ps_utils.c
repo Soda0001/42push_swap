@@ -56,14 +56,14 @@ int	parse_options(char **av, int ac, t_strategy *strategy, int *bench)
 	return (i);
 }
 
-void	run_algo(t_strategy strategy, t_node **stack)
+void	run_algo(t_strategy strategy, t_node **stack_a, t_node **stack_b)
 {
 	if (strategy == STRAT_SIMPLE)
-		simple_sort(stack);
+		simple_sort(stack_a, stack_b);
 	else if (strategy == STRAT_MEDIUM)
-		medium_sort(stack);
+		medium_sort(stack_a, stack_b);
 	else if (strategy == STRAT_COMPLEX)
-		complex_sort(stack);
+		complex_sort(stack_a, stack_b);
 	else
-		adaptive_sort(stack);
+		adaptive_sort(stack_a, stack_b);
 }

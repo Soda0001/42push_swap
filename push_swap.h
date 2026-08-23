@@ -67,9 +67,9 @@ t_node	*find_last_node(t_node *lst);
 void	free_stack(t_node **stack);
 
 /* Sorting functions */
-void	simple_sort(t_node **stack);
-void	medium_sort(t_node **stack);
-void	complex_sort(t_node **stack);
-void	adaptive_sort(t_node **stack);
+void	simple_sort(t_node **stack_a, t_node **stack_b);
+void	medium_sort(t_node **stack_a, t_node **stack_b);
+void	complex_sort(t_node **stack_a, t_node **stack_b);
+void	adaptive_sort(t_node **stack_a, t_node **stack_b);
 
 #endif
