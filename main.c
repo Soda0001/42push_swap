@@ -16,11 +16,18 @@ int	main(int ac, char **av)
 {
 	t_strategy	strategy;
 	t_node		*stack;
+	int			bench;
+	int			start;
 
 	if (ac < 2)
 		return (0);
-	strategy = check_forced(av[1]);
-	stack = initialize_stack(av, ac);
+	start = parse_options(av, ac, &strategy, &bench);
+	if (start == -1)
+	{
+		ft_putstr_fd("Error\n", 2);
+		return (1);
+	}
+	stack = initialize_stack(av, ac, start);
 	run_algo(strategy, &stack);
 	free_stack(&stack);
 	return (0);
