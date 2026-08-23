@@ -12,6 +12,38 @@
 
 #include "push_swap.h"
 
+void	foo()
+{
+	int	i;
+	int	j;
+
+	
+	if (ft_strncmp(av[1], "--", 2) != 0)
+			return (STRAT_ADAPTIVE);
+	i = 1;
+	while ()
+	{
+		if (ft_strcmp(arg[i][j], command) == 0)
+
+	}
+}
+/*
+int	determine_start(char **av, int ac)
+{
+	int	i;
+
+	i = 1;
+	while (i < ac)
+	{
+		if (!ft_strncmp(av[i], "--", 2))
+			i++;
+		else
+			break ;
+	}
+	return (i);
+}
+*/
+
 int	determine_start(char *first_arg)
 {
 	int	starting_index;
