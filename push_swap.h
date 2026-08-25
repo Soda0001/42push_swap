@@ -50,7 +50,7 @@ void		op_rrr(t_node **head_a, t_node **head_b);
 
 /* Utility functions */
 t_strategy	check_forced(char *forced_command);
-void		run_algo(t_strategy strategy, t_node **stack);
+void		run_algo(t_strategy strategy, t_node **stack_a, t_node **stack_b);
 int			parse_options(char **av, int ac, t_strategy *strategy, int *bench);
 
 /* Stack functions */

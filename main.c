@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: odurmaz@student.42istanbul.com.tr          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/19 21:25:41 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/21 13:04:22 by sedeniz          ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   main.c                                            :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/08/19 21:25:41 by alterzi          #+#    #+#              */
+/*   Updated: 2026/08/26 00:14:20 by alterzi         ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 int	main(int ac, char **av)
 {
 	t_strategy	strategy;
-	t_node		*stack;
+	t_node		*stack_a;
+	t_node		*stack_b;
 	int			bench;
 	int			start;
 
@@ -27,8 +28,10 @@ int	main(int ac, char **av)
 		ft_putstr_fd("Error\n", 2);
 		return (1);
 	}
-	stack = initialize_stack(av, ac, start);
-	run_algo(strategy, &stack);
-	free_stack(&stack);
+	stack_a = initialize_stack(av, ac, start);
+	stack_b = NULL;
+	run_algo(strategy, &stack_a, &stack_b);
+	free_stack(&stack_a);
+	free_stack(&stack_b);
 	return (0);
 }
