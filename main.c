@@ -29,6 +29,11 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	stack_a = initialize_stack(av, ac, start);
+	if (start < ac && !stack_a)
+	{
+		ft_putstr_fd("Error\n", 2);
+		return (1);
+	}
 	stack_b = NULL;
 	run_algo(strategy, &stack_a, &stack_b);
 	free_stack(&stack_a);
