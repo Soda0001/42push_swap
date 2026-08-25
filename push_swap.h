@@ -47,6 +47,8 @@ void		op_pa(t_node **head_a, t_node **head_b);
 void		op_pb(t_node **head_a, t_node **head_b);
 
 /* Rotate operations */
+void		rotate_silent(t_node **head);
+void		reverse_rotate_silent(t_node **head);
 void		op_ra(t_node **head_a);
 void		op_rb(t_node **head_b);
 void		op_rra(t_node **head_a);

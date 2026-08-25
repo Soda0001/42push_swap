@@ -12,14 +12,22 @@
 
 #include "push_swap.h"
 
+void	op_rrb(t_node **head_b)
+{
+	reverse_rotate_silent(head_b);
+	ft_putstr_fd("rrb\n", 1);
+}
+
 void	op_rr(t_node **head_a, t_node **head_b)
 {
-	op_ra(head_a);
-	op_rb(head_b);
+	rotate_silent(head_a);
+	rotate_silent(head_b);
+	ft_putstr_fd("rr\n", 1);
 }
 
 void	op_rrr(t_node **head_a, t_node **head_b)
 {
-	op_rra(head_a);
-	op_rrb(head_b);
+	reverse_rotate_silent(head_a);
+	reverse_rotate_silent(head_b);
+	ft_putstr_fd("rrr\n", 1);
 }
