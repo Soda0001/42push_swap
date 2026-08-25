@@ -12,17 +12,104 @@
 
 #include "push_swap.h"
 
+static int	is_valid_number(const char *str, long *out_val)
+{
+	int		i;
+	int		sign;
+	long	num;
+
+	i = 0;
+	sign = 1;
+	num = 0;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
+	}
+	if (!str[i])
+		return (0);
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i]))
+			return (0);
+		num = num * 10 + (str[i] - '0');
+		if (num * sign > INT_MAX || num * sign < INT_MIN)
+			return (0);
+		i++;
+	}
+	*out_val = num * sign;
+	return (1);
+}
+
+static int	has_duplicate(t_node *stack, int val)
+{
+	while (stack)
+	{
+		if (stack->content == val)
+			return (1);
+		stack = stack->next;
+	}
+	return (0);
+}
+
+static int	process_token(t_node **stack, const char *token)
+{
+	long	val;
+
+	if (!is_valid_number(token, &val))
+		return (0);
+	if (has_duplicate(*stack, (int)val))
+		return (0);
+	insert_at_tail(stack, new_node((int)val));
+	return (1);
+}
+
+static int	process_arg(t_node **stack, char *arg)
+{
+	char	**tokens;
+	int		j;
+
+	tokens = ft_split(arg, ' ');
+	if (!tokens || !tokens[0])
+	{
+		if (tokens)
+			free(tokens);
+		return (0);
+	}
+	j = 0;
+	while (tokens[j])
+	{
+		if (!process_token(stack, tokens[j]))
+		{
+			j = 0;
+			while (tokens[j])
+				free(tokens[j++]);
+			free(tokens);
+			return (0);
+		}
+		free(tokens[j]);
+		j++;
+	}
+	free(tokens);
+	return (1);
+}
+
 t_node	*initialize_stack(char **av, int ac, int start)
 {
 	t_node	*stack;
-	int		starting_index;
+	int		i;
 
 	stack = NULL;
-	starting_index = start;
-	while (starting_index < ac)
+	i = start;
+	while (i < ac)
 	{
-		insert_at_tail(&stack, new_node(ft_atoi(av[starting_index])));
-		starting_index++;
+		if (!process_arg(&stack, av[i]))
+		{
+			free_stack(&stack);
+			return (NULL);
+		}
+		i++;
 	}
 	return (stack);
 }
