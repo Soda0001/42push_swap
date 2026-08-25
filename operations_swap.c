@@ -12,25 +12,35 @@
 
 #include "push_swap.h"
 
-void	op_sa(t_node **head)
+static void	swap_top(t_node **head)
 {
-	t_node	*temp;
+	t_node	*first;
+	t_node	*second;
 
 	if (!head || !*head || !(*head)->next)
 		return ;
-	temp = *head;
-	*head = (*head)->next;
-	temp->next = (*head)->next;
-	(*head)->next = temp;
+	first = *head;
+	second = first->next;
+	first->next = second->next;
+	second->next = first;
+	*head = second;
+}
+
+void	op_sa(t_node **head)
+{
+	swap_top(head);
+	ft_putstr_fd("sa\n", 1);
 }
 
 void	op_sb(t_node **head)
 {
-	op_sa(head);
+	swap_top(head);
+	ft_putstr_fd("sb\n", 1);
 }
 
 void	op_ss(t_node **head_a, t_node **head_b)
 {
-	op_sa(head_a);
-	op_sb(head_b);
+	swap_top(head_a);
+	swap_top(head_b);
+	ft_putstr_fd("ss\n", 1);
 }
