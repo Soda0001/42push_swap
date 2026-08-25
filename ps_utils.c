@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ps_utils.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: odurmaz@student.42istanbul.com.tr          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/19 21:26:26 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/21 13:04:48 by sedeniz          ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   ps_utils.c                                        :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/08/19 21:26:26 by alterzi          #+#    #+#              */
+/*   Updated: 2026/08/26 00:35:31 by alterzi         ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_strategy	check_forced(char *forced_command)
 {
-	if (ft_strncmp(forced_command, "--", 2) != 0)
+	if (ft_strncmp(forced_command, "--", 2) != 0) //bu satır gereksiz geldi, çünkü parse_options fonksiyonunda zaten kontrol ediliyor.
 		return (STRAT_ADAPTIVE);
 	if (ft_strcmp(forced_command, "--simple") == 0)
 		return (STRAT_SIMPLE);
@@ -46,7 +46,7 @@ int	parse_options(char **av, int ac, t_strategy *strategy, int *bench)
 			return (-1);
 		i++;
 	}
-	if (i < ac && !ft_strcmp(av[i], "--bench"))
+	if (i < ac && !ft_strcmp(av[i], "--bench")) //bench kullanımı hem başta hem sonda mı olabilir diyor pdf. ve --bench --bench 4 2 3 bu durumda da hata vermesi gerekiyor. bu yüzden buraya ekledim.
 	{
 		if (*bench)
 			return (-1);
