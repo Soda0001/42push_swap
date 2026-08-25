@@ -22,6 +22,7 @@ void	op_pa(t_node **head_a, t_node **head_b)
 	(*head_b)->next = *head_a;
 	*head_a = *head_b;
 	*head_b = temp;
+	ft_putstr_fd("pa\n", 1);
 }
 
 void	op_pb(t_node **head_a, t_node **head_b)
@@ -34,4 +35,5 @@ void	op_pb(t_node **head_a, t_node **head_b)
 	(*head_a)->next = *head_b;
 	*head_b = *head_a;
 	*head_a = temp;
+	ft_putstr_fd("pb\n", 1);
 }
