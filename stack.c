@@ -12,21 +12,33 @@
 
 #include "push_swap.h"
 
-static int	is_numeric(const char *str)
+static int	is_numeric_and_in_range(const char *str, long *out_val)
 {
-	int	i;
+	int		i;
+	int		sign;
+	long	num;
 
 	i = 0;
+	sign = 1;
+	num = 0;
 	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign = -1;
 		i++;
+	}
 	if (!str[i])
 		return (0);
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
 			return (0);
+		num = num * 10 + (str[i] - '0');
+		if (num * sign > INT_MAX || num * sign < INT_MIN)
+			return (0);
 		i++;
 	}
+	*out_val = num * sign;
 	return (1);
 }
 
@@ -43,9 +55,10 @@ static int	has_duplicate(t_node *stack, int val)
 
 static int	process_token(t_node **stack, const char *token)
 {
-	int	val;
+	long	long_val;
+	int		val;
 
-	if (!is_numeric(token))
+	if (!is_numeric_and_in_range(token, &long_val))
 		return (0);
 	val = ft_atoi(token);
 	if (has_duplicate(*stack, val))
