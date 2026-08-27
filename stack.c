@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   stack.c                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/21 17:11:56 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/21 17:11:56 by sedeniz          ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   stack.c                                           :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/08/21 17:11:56 by alterzi          #+#    #+#              */
+/*   Updated: 2026/08/27 11:22:27 by alterzi         ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,31 +69,31 @@ static int	process_token(t_node **stack, const char *token)
 
 static int	process_arg(t_node **stack, char *arg)
 {
-	char	**tokens;
+	char	**nums;
 	int		j;
 
-	tokens = ft_split(arg, ' ');
-	if (!tokens || !tokens[0])
+	nums = ft_split(arg, ' ');
+	if (!nums || !nums[0])
 	{
-		if (tokens)
-			free(tokens);
+		if (nums)
+			free(nums);
 		return (0);
 	}
 	j = 0;
-	while (tokens[j])
+	while (nums[j])
 	{
-		if (!process_token(stack, tokens[j]))
+		if (!process_token(stack, nums[j]))
 		{
 			j = 0;
-			while (tokens[j])
-				free(tokens[j++]);
-			free(tokens);
+			while (nums[j])
+				free(nums[j++]);
+			free(nums);
 			return (0);
 		}
-		free(tokens[j]);
+		free(nums[j]);
 		j++;
 	}
-	free(tokens);
+	free(nums);
 	return (1);
 }
 
