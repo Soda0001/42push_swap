@@ -32,3 +32,19 @@ static	int	count_mistakes(t_node *stack_a)
 	}
 	return (mistake);
 }
+
+static	int	count_pairs(int element_count)
+{
+	int	total_pairs;
+
+	total_pairs = (element_count * (element_count - 1)) / 2;
+	return (total_pairs);
+}
+
+double	compute_disorder(int element_count, t_node *stack_a)
+{
+	double	disorder;
+
+	disorder = count_mistakes(stack_a) / count_pairs(element_count);
+	return (disorder);
+}
