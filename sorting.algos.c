@@ -6,7 +6,7 @@
 /*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/08/22 18:22:52 by alterzi          #+#    #+#              */
-/*   Updated: 2026/08/27 14:38:56 by alterzi         ###   ########.fr        */
+/*   Updated: 2026/08/27 18:04:53 by alterzi         ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -194,4 +194,19 @@ void	simple_sort(t_node **stack_a, t_node **stack_b)
 	}
 	while (*stack_b)
 		op_pa(stack_a, stack_b);
+}
+
+void	adaptive_sort(t_node **stack_a, t_node **stack_b)
+{
+	printf("Adaptive sort.\n");
+}
+
+void	complex_sort(t_node **stack_a, t_node **stack_b)
+{
+	printf("Complex sort.\n");
+}
+
+void	medium_sort(t_node **stack_a, t_node **stack_b)
+{
+	printf("Medium sort.\n");
 }
