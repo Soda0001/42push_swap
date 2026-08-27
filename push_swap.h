@@ -78,8 +78,6 @@ void		complex_sort(t_node **stack_a, t_node **stack_b);
 void		adaptive_sort(t_node **stack_a, t_node **stack_b);
 
 /* Disorder functions */
-int	count_mistakes(t_node *stack_a);
-int	count_pairs(int element_count);
 double	compute_disorder(int element_count, t_node *stack_a);
 
 #endif
