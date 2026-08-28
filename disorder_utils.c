@@ -1,16 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   disorder_utils.c                                   :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sedeniz <sedeniz@student.42istanbul.com.t  +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/27 16:17:49 by sedeniz           #+#    #+#             */
-/*   Updated: 2026/08/27 16:17:50 by sedeniz          ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   disorder_utils.c                                  :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/08/27 16:17:49 by alterzi          #+#    #+#              */
+/*   Updated: 2026/08/28 19:00:45 by alterzi         ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
-static	int	count_mistakes(t_node *stack_a)
+#include "push_swap.h"
+
+static int	count_mistakes(t_node *stack_a)
 {
 	t_node	*current;
 	t_node	*temp;
@@ -19,7 +21,7 @@ static	int	count_mistakes(t_node *stack_a)
 	current = stack_a;
 	temp = current;
 	mistake = 0;
-	while(current)
+	while (current)
 	{
 		temp = current->next;
 		while (temp)
@@ -33,7 +35,7 @@ static	int	count_mistakes(t_node *stack_a)
 	return (mistake);
 }
 
-static	int	count_pairs(int element_count)
+static int	count_pairs(int element_count)
 {
 	int	total_pairs;
 
