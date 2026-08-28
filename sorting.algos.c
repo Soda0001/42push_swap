@@ -6,13 +6,13 @@
 /*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/08/22 18:22:52 by alterzi          #+#    #+#              */
-/*   Updated: 2026/08/27 18:04:53 by alterzi         ###   ########.fr        */
+/*   Updated: 2026/08/28 18:54:54 by alterzi         ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	stack_size(t_node *stack)
+int	stack_size(t_node *stack)
 {
 	int	count;
 
@@ -85,7 +85,7 @@ static void	sort_three(t_node **stack_a)
 ** 3 eleman: maksimum 2 hamlede sort_three ile cozulur.
 */
 
-static int	try_sort_small(t_node **stack_a)
+int	try_sort_small(t_node **stack_a)
 {
 	int	size;
 
@@ -198,15 +198,10 @@ void	simple_sort(t_node **stack_a, t_node **stack_b)
 
 void	adaptive_sort(t_node **stack_a, t_node **stack_b)
 {
-	printf("Adaptive sort.\n");
+	ft_putstr_fd("adaptive_sort\n", 1);
 }
 
 void	complex_sort(t_node **stack_a, t_node **stack_b)
 {
-	printf("Complex sort.\n");
-}
-
-void	medium_sort(t_node **stack_a, t_node **stack_b)
-{
-	printf("Medium sort.\n");
+	ft_putstr_fd("Complex sort.\n", 1);
 }
