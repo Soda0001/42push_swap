@@ -34,6 +34,7 @@ typedef enum e_strategy
 typedef struct s_node
 {
 	int				content;
+	int				rank;
 	struct s_node	*next;
 }	t_node;
 
