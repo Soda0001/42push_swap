@@ -72,3 +72,19 @@ static void	process_bit(t_node **stack_a, t_node **stack_b,
 	while (*stack_b)
 		op_pa(stack_a, stack_b);
 }
+
+void	complex_sort(t_node **stack_a, t_node **stack_b)
+{
+	int	size;
+	int	max_rank;
+	int	bit;
+
+	size = get_stack_size(*stack_a);
+	max_rank = get_max_rank(*stack_a);
+	bit = 0;
+	while ((max_rank >> bit) != 0)
+	{
+		process_bit(stack_a, stack_b, bit, size);
+		bit++;
+	}
+}
