@@ -36,3 +36,39 @@ static int	get_max_rank(t_node *stack)
 	}
 	return (max_rank);
 }
+
+static void	process_bit(t_node **stack_a, t_node **stack_b,
+				int bit, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		if ((((*stack_a)->rank >> bit) & 1) == 0)
+			op_pb(stack_a, stack_b);
+		else
+			op_ra(stack_a);
+		i++;
+	}
+	while (*stack_b)
+		op_pa(stack_a, stack_b);
+}
+
+static void	process_bit(t_node **stack_a, t_node **stack_b,
+				int bit, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		if ((((*stack_a)->rank >> bit) & 1) == 0)
+			op_pb(stack_a, stack_b);
+		else
+			op_ra(stack_a);
+		i++;
+	}
+	while (*stack_b)
+		op_pa(stack_a, stack_b);
+}
