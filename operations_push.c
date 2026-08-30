@@ -1,39 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   operations_push.c                                  :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/19 13:45:00 by odurmaz           #+#    #+#             */
-/*   Updated: 2026/08/22 17:44:13 by sedeniz          ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   operations_push.c                                 :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/08/19 13:45:00 by alterzi          #+#    #+#              */
+/*   Updated: 2026/08/31 01:51:22 by alterzi         ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	op_pa(t_node **head_a, t_node **head_b)
+void	op_pa(t_node **stack_a, t_node **stack_b, t_bench *bench)
 {
 	t_node	*temp;
 
-	if (!head_b || !(*head_b))
+	if (!stack_b || !(*stack_b))
 		return ;
-	temp = (*head_b)->next;
-	(*head_b)->next = *head_a;
-	*head_a = *head_b;
-	*head_b = temp;
+	temp = (*stack_b)->next;
+	(*stack_b)->next = *stack_a;
+	*stack_a = *stack_b;
+	*stack_b = temp;
+	track_op(bench, OP_PA);
 	ft_putstr_fd("pa\n", 1);
 }
 
-void	op_pb(t_node **head_a, t_node **head_b)
+void	op_pb(t_node **stack_a, t_node **stack_b, t_bench *bench)
 {
 	t_node	*temp;
 
-	if (!head_a || !(*head_a))
+	if (!stack_a || !(*stack_a))
 		return ;
-	temp = (*head_a)->next;
-	(*head_a)->next = *head_b;
-	*head_b = *head_a;
-	*head_a = temp;
+	temp = (*stack_a)->next;
+	(*stack_a)->next = *stack_b;
+	*stack_b = *stack_a;
+	*stack_a = temp;
+	track_op(bench, OP_PB);
 	ft_putstr_fd("pb\n", 1);
 }

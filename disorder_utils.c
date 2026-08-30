@@ -6,7 +6,7 @@
 /*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/08/27 16:17:49 by alterzi          #+#    #+#              */
-/*   Updated: 2026/08/28 19:00:45 by alterzi         ###   ########.fr        */
+/*   Updated: 2026/08/31 01:51:13 by alterzi         ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,12 @@ static int	count_pairs(int element_count)
 
 double	compute_disorder(int element_count, t_node *stack_a)
 {
-	double	disorder;
+	int	pairs;
 
-	disorder = count_mistakes(stack_a) / count_pairs(element_count);
-	return (disorder);
+	if (element_count < 2)
+		return (0.0);
+	pairs = count_pairs(element_count);
+	if (pairs == 0)
+		return (0.0);
+	return ((double) count_mistakes(stack_a) / (double) pairs);
 }

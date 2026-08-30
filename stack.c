@@ -6,7 +6,7 @@
 /*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/08/21 17:11:56 by alterzi          #+#    #+#              */
-/*   Updated: 2026/08/27 11:22:27 by alterzi         ###   ########.fr        */
+/*   Updated: 2026/08/31 01:51:44 by alterzi         ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,19 +97,22 @@ static int	process_arg(t_node **stack, char *arg)
 	return (1);
 }
 
-t_node	*initialize_stack(char **av, int ac, int start)
+t_node	*initialize_stack(char **av, int ac)
 {
 	t_node	*stack;
 	int		i;
 
 	stack = NULL;
-	i = start;
+	i = 1;
 	while (i < ac)
 	{
-		if (!process_arg(&stack, av[i]))
+		if (ft_strncmp(av[i], "--", 2) != 0)
 		{
-			free_stack(&stack);
-			return (NULL);
+			if (!process_arg(&stack, av[i]))
+			{
+				free_stack(&stack);
+				return (NULL);
+			}
 		}
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/08/27 14:23:04 by alterzi          #+#    #+#              */
-/*   Updated: 2026/08/28 19:15:11 by alterzi         ###   ########.fr        */
+/*   Updated: 2026/08/31 01:51:39 by alterzi         ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,18 @@ int	stack_size(t_node *stack)
 	return (count);
 }
 
-static void	sort_three(t_node **stack_a)
+int	is_sorted(t_node *stack)
+{
+	while (stack && stack->next)
+	{
+		if (stack->content > stack->next->content)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
+}
+
+static void	sort_three(t_node **stack_a, t_bench *bench)
 {
 	int	a;
 	int	b;
@@ -35,29 +46,24 @@ static void	sort_three(t_node **stack_a)
 	b = (*stack_a)->next->content;
 	c = (*stack_a)->next->next->content;
 	if (a > b && b < c && a < c)
-		op_sa(stack_a);
+		op_sa(stack_a, bench);
 	else if (a > b && b > c)
 	{
-		op_sa(stack_a);
-		op_rra(stack_a);
+		op_sa(stack_a, bench);
+		op_rra(stack_a, bench);
 	}
 	else if (a > b && b < c && a > c)
-		op_ra(stack_a);
+		op_ra(stack_a, bench);
 	else if (a < b && b > c && a < c)
 	{
-		op_sa(stack_a);
-		op_ra(stack_a);
+		op_sa(stack_a, bench);
+		op_ra(stack_a, bench);
 	}
 	else if (a < b && b > c && a > c)
-		op_rra(stack_a);
+		op_rra(stack_a, bench);
 }
-/*
-** Kucuk yiginlar icin ozel cozumler.
-** 1 eleman: zaten sirali, 2 eleman: en fazla 1 sa,
-** 3 eleman: maksimum 2 hamlede sort_three ile cozulur.
-*/
 
-int	try_sort_small(t_node **stack_a)
+int	try_sort_small(t_node **stack_a, t_bench *bench)
 {
 	int	size;
 
@@ -67,12 +73,12 @@ int	try_sort_small(t_node **stack_a)
 	if (size == 2)
 	{
 		if ((*stack_a)->content > (*stack_a)->next->content)
-			op_sa(stack_a);
+			op_sa(stack_a, bench);
 		return (1);
 	}
 	if (size == 3)
 	{
-		sort_three(stack_a);
+		sort_three(stack_a, bench);
 		return (1);
 	}
 	return (0);
