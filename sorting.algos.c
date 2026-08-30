@@ -16,8 +16,9 @@ void	adaptive_sort(t_node **stack_a, t_node **stack_b)
 {
 	ft_putstr_fd("adaptive_sort\n", 1);
 }
-
+/*
 void	complex_sort(t_node **stack_a, t_node **stack_b)
 {
-	ft_putstr_fd("Complex sort.\n", 1);
+	radix
 }
+*/
