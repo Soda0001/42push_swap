@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   medium_algo.c                                     :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/08/28 16:40:28 by alterzi          #+#    #+#              */
-/*   Updated: 2026/08/28 18:51:44 by alterzi         ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   medium_sort.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/28 16:40:28 by alterzi           #+#    #+#             */
+/*   Updated: 2026/08/30 15:32:06 by sedeniz          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,7 @@ void	medium_sort(t_node **stack_a, t_node **stack_b)
 
 	if (try_sort_small(stack_a))
 		return ;
+	//rank_numbers(stack_a); check this
 	n = stack_size(*stack_a);
 	chunk_number = sqrt(n);
 	// chunk_size = n / chunk_number + 1; ör:30 ile 31 incele gereksiz chunk açıyor 30 da.
