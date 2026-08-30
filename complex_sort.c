@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
 static int	get_stack_size(t_node *stack)
 {
 	int	size;
@@ -55,30 +57,13 @@ static void	process_bit(t_node **stack_a, t_node **stack_b,
 		op_pa(stack_a, stack_b);
 }
 
-static void	process_bit(t_node **stack_a, t_node **stack_b,
-				int bit, int size)
-{
-	int	i;
-
-	i = 0;
-	while (i < size)
-	{
-		if ((((*stack_a)->rank >> bit) & 1) == 0)
-			op_pb(stack_a, stack_b);
-		else
-			op_ra(stack_a);
-		i++;
-	}
-	while (*stack_b)
-		op_pa(stack_a, stack_b);
-}
-
 void	complex_sort(t_node **stack_a, t_node **stack_b)
 {
 	int	size;
 	int	max_rank;
 	int	bit;
 
+	rank_numbers(stack_a);
 	size = get_stack_size(*stack_a);
 	max_rank = get_max_rank(*stack_a);
 	bit = 0;
