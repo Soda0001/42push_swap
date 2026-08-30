@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   push_swap.h                                       :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/08/19 13:24:11 by alterzi          #+#    #+#              */
-/*   Updated: 2026/08/28 19:04:02 by alterzi         ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/19 13:24:11 by alterzi           #+#    #+#             */
+/*   Updated: 2026/08/30 15:32:56 by sedeniz          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	op_rrr(t_node **head_a, t_node **head_b);
 t_strategy	check_forced(char *forced_command);
 void		run_algo(t_strategy strategy, t_node **stack_a, t_node **stack_b);
 int			parse_options(char **av, int ac, t_strategy *strategy, int *bench);
+void		rank_numbers(t_node **initial_stack);
 
 /* Stack functions */
 t_node	*initialize_stack(char **av, int ac, int start);
