@@ -67,3 +67,28 @@ void	run_algo(t_strategy strategy, t_node **stack_a, t_node **stack_b)
 	else
 		adaptive_sort(stack_a, stack_b);
 }
+
+void	rank_numbers(t_node **initial_stack)
+{
+	t_node	*temp;
+	t_node	*current;
+	t_node	*head;
+	int		counter;
+
+	counter = 0;
+	head = *initial_stack;
+	current = head;
+	while(current)
+	{
+		counter = 0;
+		temp = head;
+		while (temp)
+		{
+			if (temp->content < current->content)
+				counter++;
+			temp = temp->next;
+		}
+		current->rank = counter;
+		current = current->next;
+	}
+}
