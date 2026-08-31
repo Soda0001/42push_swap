@@ -6,13 +6,13 @@
 /*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/08/21 17:11:56 by alterzi          #+#    #+#              */
-/*   Updated: 2026/08/31 01:51:44 by alterzi         ###   ########.fr        */
+/*   Updated: 2026/08/31 11:47:25 by alterzi         ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	is_numeric_and_in_range(const char *str, long *out_val)
+static int	is_numeric_and_in_range(const char *str, int *out_val)
 {
 	int		i;
 	int		sign;
@@ -34,7 +34,7 @@ static int	is_numeric_and_in_range(const char *str, long *out_val)
 		if (!ft_isdigit(str[i]))
 			return (0);
 		num = num * 10 + (str[i] - '0');
-		if (num * sign > INT_MAX || num * sign < INT_MIN)
+		if (num * sign > 2147483647 || num * sign < -2147483648)
 			return (0);
 		i++;
 	}
@@ -55,12 +55,10 @@ static int	has_duplicate(t_node *stack, int val)
 
 static int	process_token(t_node **stack, const char *token)
 {
-	long	long_val;
-	int		val;
+	int	val;
 
-	if (!is_numeric_and_in_range(token, &long_val))
+	if (!is_numeric_and_in_range(token, &val))
 		return (0);
-	val = ft_atoi(token);
 	if (has_duplicate(*stack, val))
 		return (0);
 	insert_at_tail(stack, new_node(val));

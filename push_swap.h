@@ -6,7 +6,7 @@
 /*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/08/19 13:24:11 by alterzi          #+#    #+#              */
-/*   Updated: 2026/08/31 01:51:35 by alterzi         ###   ########.fr        */
+/*   Updated: 2026/08/31 11:31:06 by alterzi         ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
-
-# ifndef INT_MAX
-#  define INT_MAX 2147483647
-# endif
-# ifndef INT_MIN
-#  define INT_MIN -2147483648
-# endif
 
 typedef enum e_strategy
 {
