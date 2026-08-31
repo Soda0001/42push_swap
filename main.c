@@ -5,8 +5,8 @@
 /*                                                   +:+ +:+         +:+      */
 /*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/08/19 21:25:41 by alterzi          #+#    #+#              */
-/*   Updated: 2026/08/31 14:34:26 by alterzi         ###   ########.fr        */
+/*   Created: 2026/08/22 18:22:52 by alterzi          #+#    #+#              */
+/*   Updated: 2026/08/31 20:26:00 by alterzi         ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,42 @@ static int	has_number_args(char **av, int ac)
 	return (0);
 }
 
+static void	execute_sort(t_strategy strat, t_node **a,
+				t_node **b, t_bench *bench)
+{
+	int		size;
+	double	disorder;
+
+	size = stack_size(*a);
+	disorder = compute_disorder(size, *a);
+	run_algo(strat, a, b, bench);
+	if (bench->enabled)
+		print_bench(strat, disorder, bench);
+}
+
+static int	init_stack_a(int ac, char **av,
+				t_strategy *strat, t_node **stack_a)
+{
+	int	bench_enabled;
+
+	if (parse_options(av, ac, strat, &bench_enabled) == -1)
+	{
+		ft_putstr_fd("Error\n", 2);
+		return (-1);
+	}
+	*stack_a = initialize_stack(av, ac);
+	if (!*stack_a)
+	{
+		if (has_number_args(av, ac))
+		{
+			ft_putstr_fd("Error\n", 2);
+			return (-1);
+		}
+		return (0);
+	}
+	return (bench_enabled);
+}
+
 int	main(int ac, char **av)
 {
 	t_strategy	strategy;
@@ -33,35 +69,21 @@ int	main(int ac, char **av)
 	t_node		*stack_b;
 	t_bench		bench;
 	int			bench_enabled;
-	int			size;
-	double		disorder;
 
 	if (ac < 2)
 		return (0);
 	ft_memset(&bench, 0, sizeof(t_bench));
-	if (parse_options(av, ac, &strategy, &bench_enabled) == -1)
-	{
-		ft_putstr_fd("Error\n", 2);
+	stack_a = NULL;
+	bench_enabled = init_stack_a(ac, av, &strategy, &stack_a);
+	if (bench_enabled == -1)
 		return (1);
-	}
-	// bench.enabled = bench_enabled;
-	stack_a = initialize_stack(av, ac);
 	if (!stack_a)
-	{
-		if (has_number_args(av, ac))
-		{
-			ft_putstr_fd("Error\n", 2);
-			return (1);
-		}
 		return (0);
-	}
+	bench.enabled = bench_enabled;
 	stack_b = NULL;
-	size = stack_size(stack_a);
-	disorder = compute_disorder(size, stack_a);
-	run_algo(strategy, &stack_a, &stack_b, &bench);
-	if (bench_enabled)
-		print_bench(strategy, disorder, &bench);
+	execute_sort(strategy, &stack_a, &stack_b, &bench);
 	free_stack(&stack_a);
-	// free_stack(&stack_b); stackb nin içinde null olmasını kontrol eklet.
+	if (stack_b)
+		free_stack(&stack_b);
 	return (0);
 }

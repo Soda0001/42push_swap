@@ -1,16 +1,64 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   simple_sort.c                                     :+:      :+:    :+:    */
+/*   simple_sort.c                                   :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
 /*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/08/28 19:12:13 by alterzi          #+#    #+#              */
-/*   Updated: 2026/08/31 01:51:37 by alterzi         ###   ########.fr        */
+/*   Updated: 2026/08/31 20:32:00 by alterzi         ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	sort_three(t_node **stack_a, t_bench *bench)
+{
+	int	a;
+	int	b;
+	int	c;
+
+	a = (*stack_a)->content;
+	b = (*stack_a)->next->content;
+	c = (*stack_a)->next->next->content;
+	if (a > b && b < c && a < c)
+		op_sa(stack_a, bench);
+	else if (a > b && b > c)
+	{
+		op_sa(stack_a, bench);
+		op_rra(stack_a, bench);
+	}
+	else if (a > b && b < c && a > c)
+		op_ra(stack_a, bench);
+	else if (a < b && b > c && a < c)
+	{
+		op_sa(stack_a, bench);
+		op_ra(stack_a, bench);
+	}
+	else if (a < b && b > c && a > c)
+		op_rra(stack_a, bench);
+}
+
+int	try_sort_small(t_node **stack_a, t_bench *bench)
+{
+	int	size;
+
+	size = stack_size(*stack_a);
+	if (size <= 1)
+		return (1);
+	if (size == 2)
+	{
+		if ((*stack_a)->content > (*stack_a)->next->content)
+			op_sa(stack_a, bench);
+		return (1);
+	}
+	if (size == 3)
+	{
+		sort_three(stack_a, bench);
+		return (1);
+	}
+	return (0);
+}
 
 static int	find_min(t_node *stack)
 {
@@ -24,19 +72,6 @@ static int	find_min(t_node *stack)
 		stack = stack->next;
 	}
 	return (min);
-}
-
-static int	find_pos(t_node *stack, int value)
-{
-	int	pos;
-
-	pos = 0;
-	while (stack->content != value)
-	{
-		pos++;
-		stack = stack->next;
-	}
-	return (pos);
 }
 
 static void	move_to_top(t_node **stack_a, int pos, int size, t_bench *bench)
@@ -58,8 +93,6 @@ void	simple_sort(t_node **stack_a, t_node **stack_b, t_bench *bench)
 	int	n;
 	int	i;
 	int	pos;
-	int	size;
-	int	min;
 
 	if (try_sort_small(stack_a, bench))
 		return ;
@@ -67,10 +100,10 @@ void	simple_sort(t_node **stack_a, t_node **stack_b, t_bench *bench)
 	i = 0;
 	while (i < n)
 	{
-		min = find_min(*stack_a);
-		size = stack_size(*stack_a);
-		pos = find_pos(*stack_a, min);
-		move_to_top(stack_a, pos, size, bench);
+		pos = 0;
+		while ((*stack_a)->content != find_min(*stack_a))
+			pos++;
+		move_to_top(stack_a, pos, stack_size(*stack_a), bench);
 		op_pb(stack_a, stack_b, bench);
 		i++;
 	}

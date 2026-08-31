@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   bench.c                                           :+:      :+:    :+:    */
+/*   bench.c                                         :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
 /*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/08/30 16:50:00 by alterzi          #+#    #+#              */
-/*   Updated: 2026/08/31 17:31:35 by alterzi         ###   ########.fr        */
+/*   Updated: 2026/08/31 20:32:00 by alterzi         ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,10 @@ static const char	*strat_name(t_strategy s)
 	return ("Adaptive");
 }
 
-void	print_bench(t_strategy strategy, double disorder, t_bench *bench)
+static void	print_header(t_strategy strategy, double disorder, t_bench *bench)
 {
 	int	pct;
 
-	if (!bench)
-		return ;
 	pct = (int)(disorder * 10000);
 	ft_putstr_fd("[bench] disorder: ", 2);
 	ft_putnbr_fd(pct / 100, 2);
@@ -58,6 +56,13 @@ void	print_bench(t_strategy strategy, double disorder, t_bench *bench)
 	ft_putstr_fd("\n[bench] total_ops: ", 2);
 	ft_putnbr_fd(bench->total_ops, 2);
 	ft_putstr_fd("\n", 2);
+}
+
+void	print_bench(t_strategy strategy, double disorder, t_bench *bench)
+{
+	if (!bench)
+		return ;
+	print_header(strategy, disorder, bench);
 	put_op_line("[bench] sa: ", bench->counts[OP_SA]);
 	put_op_line("sb: ", bench->counts[OP_SB]);
 	put_op_line("ss: ", bench->counts[OP_SS]);
