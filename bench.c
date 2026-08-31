@@ -6,7 +6,7 @@
 /*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/08/30 16:50:00 by alterzi          #+#    #+#              */
-/*   Updated: 2026/08/31 01:32:22 by alterzi         ###   ########.fr        */
+/*   Updated: 2026/08/31 17:31:35 by alterzi         ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,6 @@ void	track_op(t_bench *bench, t_op op)
 		bench->total_ops++;
 	}
 }
-
-// static void	ft_putnbr_fd(int n, int fd)
-// {
-// 	char	buf[16];
-// 	int		i;
-
-// 	i = 15;
-// 	buf[i] = '\0';
-// 	if (n == 0)
-// 	{
-// 		write(fd, "0", 1);
-// 		return ;
-// 	}
-// 	while (n > 0)
-// 	{
-// 		buf[--i] = (n % 10) + '0';
-// 		n = n / 10;
-// 	}
-// 	write(fd, buf + i, 15 - i);
-// }
 
 static void	put_op_line(const char *label, int value)
 {
