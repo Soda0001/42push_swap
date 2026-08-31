@@ -6,7 +6,7 @@
 /*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/08/19 21:26:26 by alterzi          #+#    #+#              */
-/*   Updated: 2026/08/31 10:48:58 by alterzi         ###   ########.fr        */
+/*   Updated: 2026/08/31 17:36:59 by alterzi         ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,6 @@ t_strategy	check_forced(char *forced_command)
 		return (STRAT_ADAPTIVE);
 	return (STRAT_INVALID);
 }
-
-//parse_options: -bench ve stratejiden birer tane olacak.
-//-Her ikisi de her yerde olabilir. başta sonda ortada.
 
 int	parse_options(char **av, int ac, t_strategy *strategy, int *bench)
 {
