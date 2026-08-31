@@ -6,13 +6,13 @@
 /*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/08/28 16:40:28 by alterzi          #+#    #+#              */
-/*   Updated: 2026/08/31 16:29:26 by alterzi         ###   ########.fr        */
+/*   Updated: 2026/08/31 17:41:00 by alterzi         ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	sqrt(int n)
+static int	ft_sqrt(int n)
 {
 	int	i;
 
@@ -125,7 +125,7 @@ void	medium_sort(t_node **stack_a, t_node **stack_b, t_bench *bench)
 		return ;
 	rank_numbers(stack_a);
 	n = stack_size(*stack_a);
-	chunk_count = sqrt(n);
+	chunk_count = ft_sqrt(n);
 	chunk_size = (n + chunk_count - 1) / chunk_count;
 	push_chunks_to_b(stack_a, stack_b, chunk_count, chunk_size, bench);
 	while (*stack_b)
