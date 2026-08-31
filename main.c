@@ -6,7 +6,7 @@
 /*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/08/19 21:25:41 by alterzi          #+#    #+#              */
-/*   Updated: 2026/08/31 01:51:16 by alterzi         ###   ########.fr        */
+/*   Updated: 2026/08/31 14:34:26 by alterzi         ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	main(int ac, char **av)
 		ft_putstr_fd("Error\n", 2);
 		return (1);
 	}
-	bench.enabled = bench_enabled;
+	// bench.enabled = bench_enabled;
 	stack_a = initialize_stack(av, ac);
 	if (!stack_a)
 	{
@@ -62,6 +62,6 @@ int	main(int ac, char **av)
 	if (bench_enabled)
 		print_bench(strategy, disorder, &bench);
 	free_stack(&stack_a);
-	free_stack(&stack_b);
+	// free_stack(&stack_b); stackb nin içinde null olmasını kontrol eklet.
 	return (0);
 }
