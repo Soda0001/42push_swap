@@ -6,7 +6,7 @@
 /*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/08/28 16:40:28 by alterzi          #+#    #+#              */
-/*   Updated: 2026/08/31 01:51:20 by alterzi         ###   ########.fr        */
+/*   Updated: 2026/08/31 16:29:26 by alterzi         ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,13 @@ static int	get_chunk_members_rank(t_node *stack_a, int start, int end)
 	return (-1);
 }
 
-static void	push_chunks_to_b(t_node **stack_a, t_node **stack_b, int chunk_number, int chunk_size, t_bench *bench)
+static void	push_chunks_to_b(t_node **stack_a, t_node **stack_b, int chunk_count, int chunk_size, t_bench *bench)
 {
 	int	i;
 	int	pos;
 
 	i = 0;
-	while (i < chunk_number)
+	while (i < chunk_count)
 	{
 		pos = get_chunk_members_rank(*stack_a, i * chunk_size, (i + 1) * chunk_size);
 		while (pos != -1)
@@ -117,7 +117,7 @@ void	medium_sort(t_node **stack_a, t_node **stack_b, t_bench *bench)
 {
 	int	n;
 	int	chunk_size;
-	int	chunk_number;
+	int	chunk_count;
 	int	max_rank;
 	int	pos;
 
@@ -125,9 +125,9 @@ void	medium_sort(t_node **stack_a, t_node **stack_b, t_bench *bench)
 		return ;
 	rank_numbers(stack_a);
 	n = stack_size(*stack_a);
-	chunk_number = sqrt(n);
-	chunk_size = (n + chunk_number - 1) / chunk_number;
-	push_chunks_to_b(stack_a, stack_b, chunk_number, chunk_size, bench);
+	chunk_count = sqrt(n);
+	chunk_size = (n + chunk_count - 1) / chunk_count;
+	push_chunks_to_b(stack_a, stack_b, chunk_count, chunk_size, bench);
 	while (*stack_b)
 	{
 		max_rank = find_max_rank(*stack_b);
