@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   simple_sort.c                                   :+:      :+:    :+:    */
+/*   simple_sort.c                                     :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
 /*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/08/28 19:12:13 by alterzi          #+#    #+#              */
-/*   Updated: 2026/08/31 20:32:00 by alterzi         ###   ########.fr        */
+/*   Updated: 2026/09/01 10:16:30 by alterzi         ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ static int	find_min(t_node *stack)
 
 static void	move_to_top(t_node **stack_a, int pos, int size, t_bench *bench)
 {
-	if (pos <= size / 2)
+	if (pos <= size - pos)
 	{
 		while (pos-- > 0)
 			op_ra(stack_a, bench);
