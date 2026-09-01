@@ -5,8 +5,8 @@
 /*                                                   +:+ +:+         +:+      */
 /*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/08/28 19:12:13 by alterzi          #+#    #+#              */
-/*   Updated: 2026/09/01 10:16:30 by alterzi         ###   ########.fr        */
+/*   Created: 2026/08/22 18:22:52 by alterzi          #+#    #+#              */
+/*   Updated: 2026/08/31 20:26:00 by alterzi         ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,18 +60,28 @@ int	try_sort_small(t_node **stack_a, t_bench *bench)
 	return (0);
 }
 
-static int	find_min(t_node *stack)
+static int	find_min_pos(t_node *stack)
 {
 	int	min;
+	int	min_pos;
+	int	pos;
 
+	if (!stack)
+		return (0);
 	min = stack->content;
+	min_pos = 0;
+	pos = 0;
 	while (stack)
 	{
 		if (stack->content < min)
+		{
 			min = stack->content;
+			min_pos = pos;
+		}
+		pos++;
 		stack = stack->next;
 	}
-	return (min);
+	return (min_pos);
 }
 
 static void	move_to_top(t_node **stack_a, int pos, int size, t_bench *bench)
@@ -100,9 +110,7 @@ void	simple_sort(t_node **stack_a, t_node **stack_b, t_bench *bench)
 	i = 0;
 	while (i < n)
 	{
-		pos = 0;
-		while ((*stack_a)->content != find_min(*stack_a))
-			pos++;
+		pos = find_min_pos(*stack_a);
 		move_to_top(stack_a, pos, stack_size(*stack_a), bench);
 		op_pb(stack_a, stack_b, bench);
 		i++;
