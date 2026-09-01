@@ -114,13 +114,48 @@ To achieve optimal performance across different dataset sizes and initial arrang
 ## Resources
 
 ### Documentation & References
-- **42 Push_swap Subject**: Official 42 school curriculum project specification.
-- **Radix Sort Algorithm**: Explanation of Least Significant Digit (LSD) Radix Sort on binary keys.
-- **Inversion Count & Disorder Metrics**: Academic literature on measuring array disorder and inversion ratios.
+
+* **42 Push_swap Subject**: Official 42 school curriculum project specification.
+
+### Time Complexity & Algorithm Analysis
+
+* [Understanding Time Complexity – GeeksforGeeks](https://www.geeksforgeeks.org/dsa/understanding-time-complexity-simple-examples/)
+* [Big-O Cheat Sheet – freeCodeCamp](https://www.freecodecamp.org/news/big-o-cheat-sheet-time-complexity-chart/)
+* [Time and Space Complexity: A Beginner's Guide – Medium](https://medium.com/@pnandhiniofficial/time-and-space-complexity-a-beginners-guide-88d617d29d01)
+
+### Sorting Algorithms
+
+* [VisuAlgo – Sorting Algorithms Visualization](https://visualgo.net/en/sorting?slide=1)
+
+### Bitwise Operations & Radix Sort
+
+* [What Are Bitwise Shift Operators and How Do They Work? – Stack Overflow](https://stackoverflow.com/questions/141525/what-are-bitwise-shift-bit-shift-operators-and-how-do-they-work)
+* [Left Shift and Right Shift Operators in C/C++ – GeeksforGeeks](https://www.geeksforgeeks.org/cpp/left-shift-right-shift-operators-c-cpp/)
+* [Radix Sort Video Explanation](https://www.youtube.com/watch?v=rRYwmEG3wJI)
+* [Bitwise Operations / Radix Sort Video](https://www.youtube.com/watch?v=fZZ3oUakA0o)
+
+### Concepts Used in This Project
+
+The following resources were used to better understand and research:
+
+* **Time and space complexity analysis**
+* **Big-O notation**
+* **Sorting algorithm behavior**
+* **Binary representation and bitwise operations**
+* **Bit shifting operators in C**
+* **Least Significant Digit (LSD) Radix Sort**
+* **Algorithm visualization and performance analysis**
 
 ### AI Usage Disclosure
-In accordance with 42 curriculum guidelines, Artificial Intelligence (AI) assistance was used in this project only as a supporting tool for testing and code review.
 
-1. **Algorithm Testing & Validation:** AI assistance was used to help test the sorting algorithms with different inputs and edge cases, and to verify whether the implemented algorithms behaved as expected.
-2. **Code Testing & Debugging:** AI was used as a support tool during testing to help identify potential issues, understand unexpected behavior, and validate the results of the implemented code.
-3. **Best Practices & Code Review:** AI was used to review the code and suggest general best practices, improvements in readability, maintainability, and code structure. The implementation and final decisions remained the developer's responsibility.
+Artificial Intelligence tools were used during the development of this project as supplementary resources for learning, testing, and code review.
+
+AI assistance was used to:
+
+* **Support algorithm analysis and testing** by helping explore different approaches, test edge cases, and validate expected behavior.
+* **Assist with debugging** by helping identify potential issues and explain unexpected program behavior during development.
+* **Provide code review and best-practice suggestions** related to code structure, readability, and maintainability.
+* **Support technical learning** by providing explanations of relevant concepts, including algorithms, complexity analysis, and bitwise operations.
+* **README.md** Assisting on writing this README file.
+
+All implementation, integration, testing, and final technical decisions were made by the project authors. AI-generated suggestions were reviewed, adapted where appropriate, and validated by the developers before being incorporated into the project.
