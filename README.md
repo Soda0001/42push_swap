@@ -76,14 +76,6 @@ Or pass all numbers as a single quoted string:
   ./push_swap --bench --medium 4 2 1 5 3
   ```
 
-#### Count Operations
-
-To count the total number of operations generated:
-
-```bash
-./push_swap 4 2 1 5 3 | wc -l
-```
-
 #### Testing with Random Numbers (Bash / Python)
 
 ```bash
@@ -125,13 +117,6 @@ To achieve optimal performance across different dataset sizes and initial arrang
 - **42 Push_swap Subject**: Official 42 school curriculum project specification.
 - **Radix Sort Algorithm**: Explanation of Least Significant Digit (LSD) Radix Sort on binary keys.
 - **Inversion Count & Disorder Metrics**: Academic literature on measuring array disorder and inversion ratios.
-
-
-In accordance with 42 curriculum guidelines, Artificial Intelligence (AI) assistance was utilized in this project for the following specific tasks:
-1. **Refactoring & Code Modularization**: Reorganizing monolithic utility scripts into clean, single-responsibility files (`op_push.c`, `op_swap.c`, `op_rotate.c`, `op_reverse_rotate.c`, `stack_utils.c`, `sort_utils.c`).
-2. **Norminette v3 Compliance**: Formatting function signatures, tab alignments, header headers, and resolving line-length / variable-count constraint violations.
-3. **Build System & Edge-Case Auditing**: Constructing the root `Makefile` and auditing memory cleanup routines (`free_stack`) to ensure zero memory leaks.
-4. **Documentation**: Structuring and drafting this `README.md` to fulfill Chapter VII specifications.
 
 ### AI Usage Disclosure
 In accordance with 42 curriculum guidelines, Artificial Intelligence (AI) assistance was used in this project only as a supporting tool for testing and code review.
