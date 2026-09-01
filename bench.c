@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   bench.c                                         :+:      :+:    :+:    */
+/*   bench.c                                           :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
 /*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/08/30 16:50:00 by alterzi          #+#    #+#              */
-/*   Updated: 2026/08/31 20:32:00 by alterzi         ###   ########.fr        */
+/*   Created: 2026/08/22 18:22:52 by alterzi          #+#    #+#              */
+/*   Updated: 2026/09/01 15:33:39 by alterzi         ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,24 @@ static void	put_op_line(const char *label, int value)
 	ft_putstr_fd(" ", 2);
 }
 
-static const char	*strat_name(t_strategy s)
+static void	print_strategy_info(t_strategy strategy, double disorder)
 {
-	if (s == STRAT_SIMPLE)
-		return ("Simple");
-	if (s == STRAT_MEDIUM)
-		return ("Medium");
-	if (s == STRAT_COMPLEX)
-		return ("Complex");
-	return ("Adaptive");
+	ft_putstr_fd("[bench] strategy: ", 2);
+	if (strategy == STRAT_SIMPLE)
+		ft_putstr_fd("Simple / O(n²)\n", 2);
+	else if (strategy == STRAT_MEDIUM)
+		ft_putstr_fd("Medium / O(n√n)\n", 2);
+	else if (strategy == STRAT_COMPLEX)
+		ft_putstr_fd("Complex / O(nlogn)\n", 2);
+	else
+	{
+		if (disorder < 0.2)
+			ft_putstr_fd("Adaptive / O(n²)\n", 2);
+		else if (disorder < 0.5)
+			ft_putstr_fd("Adaptive / O(n√n)\n", 2);
+		else
+			ft_putstr_fd("Adaptive / O(nlogn)\n", 2);
+	}
 }
 
 static void	print_header(t_strategy strategy, double disorder, t_bench *bench)
@@ -51,9 +60,8 @@ static void	print_header(t_strategy strategy, double disorder, t_bench *bench)
 		ft_putstr_fd("0", 2);
 	ft_putnbr_fd(pct % 100, 2);
 	ft_putstr_fd("%\n", 2);
-	ft_putstr_fd("[bench] strategy: ", 2);
-	ft_putstr_fd((char *) strat_name(strategy), 2);
-	ft_putstr_fd("\n[bench] total_ops: ", 2);
+	print_strategy_info(strategy, disorder);
+	ft_putstr_fd("[bench] total_ops: ", 2);
 	ft_putnbr_fd(bench->total_ops, 2);
 	ft_putstr_fd("\n", 2);
 }
