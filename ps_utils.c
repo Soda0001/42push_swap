@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ps_utils.c                                      :+:      :+:    :+:    */
+/*   ps_utils.c                                        :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
 /*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/08/19 21:26:26 by alterzi          #+#    #+#              */
-/*   Updated: 2026/08/31 20:32:00 by alterzi         ###   ########.fr        */
+/*   Updated: 2026/09/01 09:54:53 by alterzi         ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ t_strategy	check_forced(char *forced_command)
 	return (STRAT_INVALID);
 }
 
-static int	process_flag(char *arg, t_strategy *strat,
-				int *strat_count, int *bench)
+static int process_flag(char * arg, t_strategy * strat,
+	int	*strat_count, int *bench_enabled)
 {
 	t_strategy	curr;
 
 	if (!ft_strcmp(arg, "--bench"))
 	{
-		if (*bench)
+		if (*bench_enabled)
 			return (-1);
-		*bench = 1;
+		*bench_enabled = 1;
 	}
 	else if (!ft_strncmp(arg, "--", 2))
 	{
@@ -51,18 +51,18 @@ static int	process_flag(char *arg, t_strategy *strat,
 	return (0);
 }
 
-int	parse_options(char **av, int ac, t_strategy *strategy, int *bench)
+int	parse_options(char **av, int ac, t_strategy *strategy, int *bench_enabled)
 {
 	int	i;
 	int	strat_count;
 
 	i = 1;
 	*strategy = STRAT_ADAPTIVE;
-	*bench = 0;
+	*bench_enabled = 0;
 	strat_count = 0;
 	while (i < ac)
 	{
-		if (process_flag(av[i], strategy, &strat_count, bench) == -1)
+		if (process_flag(av[i], strategy, &strat_count, bench_enabled) == -1)
 			return (-1);
 		i++;
 	}

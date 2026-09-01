@@ -39,47 +39,25 @@ static void	execute_sort(t_strategy strat, t_node **a,
 		print_bench(strat, disorder, bench);
 }
 
-static int	init_stack_a(int ac, char **av,
-				t_strategy *strat, t_node **stack_a)
-{
-	int	bench_enabled;
-
-	if (parse_options(av, ac, strat, &bench_enabled) == -1)
-	{
-		ft_putstr_fd("Error\n", 2);
-		return (-1);
-	}
-	*stack_a = initialize_stack(av, ac);
-	if (!*stack_a)
-	{
-		if (has_number_args(av, ac))
-		{
-			ft_putstr_fd("Error\n", 2);
-			return (-1);
-		}
-		return (0);
-	}
-	return (bench_enabled);
-}
-
 int	main(int ac, char **av)
 {
 	t_strategy	strategy;
 	t_node		*stack_a;
 	t_node		*stack_b;
 	t_bench		bench;
-	int			bench_enabled;
 
 	if (ac < 2)
 		return (0);
 	ft_memset(&bench, 0, sizeof(t_bench));
-	stack_a = NULL;
-	bench_enabled = init_stack_a(ac, av, &strategy, &stack_a);
-	if (bench_enabled == -1)
-		return (1);
+	if (parse_options(av, ac, &strategy, &bench.enabled) == -1)
+		return (ft_putstr_fd("Error\n", 2), 1);
+	stack_a = initialize_stack(av, ac);
 	if (!stack_a)
+	{
+		if (has_number_args(av, ac))
+			return (ft_putstr_fd("Error\n", 2), 1);
 		return (0);
-	bench.enabled = bench_enabled;
+	}
 	stack_b = NULL;
 	execute_sort(strategy, &stack_a, &stack_b, &bench);
 	free_stack(&stack_a);
