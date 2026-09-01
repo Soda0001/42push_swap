@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   ps_utils.c                                        :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: alterzi <alterzi@student.42istanbul.com.tr#+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/08/19 21:26:26 by alterzi          #+#    #+#              */
-/*   Updated: 2026/09/01 09:54:53 by alterzi         ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   ps_utils.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sedeniz <sedeniz@student.42istanbul.com.tr +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/19 21:26:26 by alterzi           #+#    #+#             */
+/*   Updated: 2026/09/01 15:55:48 by sedeniz          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_strategy	check_forced(char *forced_command)
 	return (STRAT_INVALID);
 }
 
-static int process_flag(char * arg, t_strategy * strat,
+static	int	process_flag(char *arg, t_strategy *strat,
 	int	*strat_count, int *bench_enabled)
 {
 	t_strategy	curr;
